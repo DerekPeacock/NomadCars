@@ -3,7 +3,7 @@ using System;
 namespace NomadCars.Models
 {
     /// <summary>
-    /// William, Daniel
+    /// Daniel
     /// </summary>
     /// 
     public class Address

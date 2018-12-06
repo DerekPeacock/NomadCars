@@ -33,7 +33,9 @@ namespace NomadCars.Models
         /// </summary>
         public Date DateOfBirth { get; set; }
         /// <summary>
-        /// The is a current statement of someone's personal relationship status, e.g. single, married or divorced. This kind of information is often used in forms to determine details such as financial needs.
+        /// The is a current statement of someone's personal relationship status, 
+        /// e.g. single, married or divorced. This kind of information is often 
+        /// used in forms to determine details such as financial needs.
         /// </summary>
         public String MaritalStatus { get; set; }
         public bool Customer { get; set; }
@@ -41,9 +43,9 @@ namespace NomadCars.Models
 
         public Staff staff;
         public Address[] address;
-        public Purchase purchase;
+        public Icollection<Purchase> purchase;
 
-        public _Payment_Card card;
+        public PaymentCard card;
 
     }
 }
