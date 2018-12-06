@@ -1,32 +1,40 @@
 using System;
-
 namespace NomadCars.Models
 {
     /// <summary>
-    /// William, Daniel
+    /// Daniel's Class
+    /// Each Member of staff is a Person working for Nomad Cars
     /// </summary>
     public class Staff
     {
         /// <summary>
-        /// A specific identification number that identifies the member of staff within the database.
+        /// A specific identification number that identifies the member 
+        /// of staff within the database.
         /// </summary>
-        private int StaffID { get; set; }
+        public int StaffID { get; set; }
         /// <summary>
-        /// The department that the member of staff works for. The departments include sales, database administration and management
+        /// The department that the member of staff works for. 
+        /// The departments include sales, database administration and management
         /// </summary>
-        private String Department { get; set; }
+        public String Department { get; set; }
         /// <summary>
-        /// The specific position that the member of staff holds within their department, e.g. sales representative or database administrator.
+        /// The specific position that the member of staff holds within 
+        /// their department, e.g. sales representative or database administrator.
         /// </summary>
-        private String JobPosition { get; set; }
-        private Decimal Salary { get; set; }
-        private DateTime StartDate { get; set; }
-        private String ImageURL { get; set; }
-        private String StaffDescription { get; set; }
+        public String JobPosition { get; set; }
 
-        private Purchase purchase;
+        public decimal Salary { get; set; }
 
-        private Person person;
+        public int StartDate { get; set; }
+
+        public String ImageURL { get; set; }
+
+        public String Description { get; set; }
+
+        // Foriegn Key
+        public int PersonID { get; set; }
+
+        public virtual Person Person { get; set; }
 
     }
 }
