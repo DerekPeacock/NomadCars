@@ -28,24 +28,29 @@ namespace NomadCars.Models
         /// <summary>
         /// The phone number of a person, assigned to a home phone.
         /// </summary>
+        [StringLength(10), DataType(DataType.PhoneNumber), Display(Name = "Home Phone Number")]
         public int HomePhoneNumber { get; set; }
         /// <summary>
         /// The phone number of a person, assigned to their mobile phone.
         /// </summary>
+        [StringLength(10), DataType(DataType.PhoneNumber), Display(Name = "Mobile Phone NUmber")]
         public int MobilePhoneNumber { get; set; }
         /// <summary>
         /// The e-mail held by a person by which they can be contacted
         /// </summary>
+        [Required, StringLength(10), Display(Name = "E-mail Address")]
         public String Email { get; set; }
         /// <summary>
         /// The date of birth of the person
         /// </summary>
+        [Required, StringLength(8), DataType(DataType.DateTime), Display(Name = "dd/mm/yy")]
         public DateTime DateOfBirth { get; set; }
         /// <summary>
         /// The is a current statement of someone's personal relationship status, 
         /// e.g. single, married or divorced. This kind of information is often 
         /// used in forms to determine details such as financial needs.
         /// </summary>
+        [Required, StringLength(20), Display(Name = "Marital Status")]
         public String MaritalStatus { get; set; }
         /// <summary>
         /// A boolean statement that refers to whether or not the person 
