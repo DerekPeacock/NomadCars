@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace NomadCars.Models
 {
@@ -7,21 +9,28 @@ namespace NomadCars.Models
     /// </summary>
     public class Person
     {
+        /// <summary>
+        /// A unique number given to a person who 
+        /// involves themselves with our cars business,
+        /// primarily a customer.
+        /// </summary>
         public int PersonID { get; set; }
         /// <summary>
         /// The Forename of any given person.
         /// </summary>
+        [Required, StringLength(20), Display(Name = "First Name")]
         public String FirstName { get; set; }
         /// <summary>
         /// The surname of any given person.
         /// </summary>
+        [Required, StringLength(20), Display(Name = "Last Name")]
         public String LastName { get; set; }
         /// <summary>
-        /// 
+        /// The phone number of a person, assigned to a home phone.
         /// </summary>
         public int HomePhoneNumber { get; set; }
         /// <summary>
-        /// The phone number any given person, by which they can be contacted with.
+        /// The phone number of a person, assigned to their mobile phone.
         /// </summary>
         public int MobilePhoneNumber { get; set; }
         /// <summary>
@@ -31,20 +40,23 @@ namespace NomadCars.Models
         /// <summary>
         /// The date of birth of the person
         /// </summary>
-        public Date DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         /// <summary>
         /// The is a current statement of someone's personal relationship status, 
         /// e.g. single, married or divorced. This kind of information is often 
         /// used in forms to determine details such as financial needs.
         /// </summary>
         public String MaritalStatus { get; set; }
+        /// <summary>
+        /// A boolean statement that refers to whether or not the person 
+        /// concerned is a customer.
+        /// </summary>
         public bool Customer { get; set; }
 
 
         public Staff staff;
         public Address[] address;
-        public Icollection<Purchase> purchase;
-
+        public ICollection<Purchase> purchase;
         public PaymentCard card;
 
     }

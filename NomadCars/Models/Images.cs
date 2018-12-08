@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// William
@@ -10,11 +12,11 @@ namespace NomadCars.Models
     {
         private int ImageID;
         private String ImageURL;
-        private String description;
-        private String caption;
+        private String Description;
+        private String Caption;
         private String ImageType;
 
-        private Car car;
+        private ICollection<Car> car;
 
     }
 }
