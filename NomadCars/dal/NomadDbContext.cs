@@ -5,7 +5,7 @@ namespace NomadCars.DAL
 {
     public class NomadDbContext : DbContext
     {
-        public NomadDbContext() : base("NomadDbContext")
+        public NomadDbContext() : base("DefaultConnection")
         {
         }
 
