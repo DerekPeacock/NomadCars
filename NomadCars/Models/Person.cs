@@ -66,11 +66,14 @@ namespace NomadCars.Models
         /// </summary>
         public bool Customer { get; set; }
 
+        public int? StaffID { get; set; }
+       
+        public virtual Staff Staff { get; set; }
 
-        public Staff staff;
         public Address[] address;
-        public ICollection<Purchase> purchase;
-        public PaymentCard card;
+        public ICollection<Purchase> PurchaseList;
+
+        public virtual PaymentCard PaymentCard { get; set; }
 
     }
 }
