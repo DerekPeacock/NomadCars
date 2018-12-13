@@ -6,6 +6,13 @@ using System;
 /// 
 namespace NomadCars.Models
 {
+    public enum TransactionTypes
+    {
+        CASH,
+        CARD,
+        LOAN,
+        HP
+    }
     public class Purchase
     {
         /// <summary>
@@ -17,26 +24,26 @@ namespace NomadCars.Models
         /// A detailed receipt of the purchase made by the customer, including the product, 
         /// amount, address of the customer, address of the seller as well as the date of payment.
         /// </summary>
-        public bool Invoice { get; set; }
+        public bool IsInvoiced { get; set; }
         /// <summary>
         /// The document, held by the sales team, for the customer to complete in order for the 
         /// car to be registered in their name, as per the law of the government.
         /// </summary>
-        public bool VehicleRegistrationDocument { get; set; }
+        public bool HasRegistrationDocument { get; set; }
         /// <summary>
         /// A record of the database representing whether or not the customer has returned the car. 
         /// This will be allowed within a 30 day period of time.
         /// </summary>
-        public bool Return_ { get; set; }
+        public bool IsReturned { get; set; }
         /// <summary>
         /// The cost of the car returned to the customer as part of the refund procedure. 
         /// Note this only applies if the customer requests a refund due to a fault discovered in the car before the 30 day time period has concluded.
         /// </summary>
-        public int Refund { get; set; }
+        public decimal Refund { get; set; }
 
-        public decimal Intrest { get; set; }
+        public decimal IntrestRate { get; set; }
         //Nullable
-        public String TransactionType { get; set; }
+        public TransactionTypes TransactionType { get; set; }
 
         public int PersonID { get; set; }
 
