@@ -70,7 +70,8 @@ namespace NomadCars.Models
        
         public virtual Staff Staff { get; set; }
 
-        public Address[] address;
+        public int AdressID { get; set; }
+        public virtual Address Address { get; set; }
         public ICollection<Purchase> PurchaseList;
 
         public virtual PaymentCard PaymentCard { get; set; }
