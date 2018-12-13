@@ -4,6 +4,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NomadCars.Models
 {
+    public enum MaritalSatusOptions
+    {
+        SINGLE,
+        MARRIED,
+        DIVORCED
+    }
+
     /// <summary>
     /// William
     /// </summary>
@@ -57,7 +64,7 @@ namespace NomadCars.Models
         /// e.g. single, married or divorced. This kind of information is often 
         /// used in forms to determine details such as financial needs.
         /// </summary>
-        [Required, StringLength(20), Display(Name = "Marital Status")]
+        [Display(Name = "Marital Status"), StringLength(20)]
         public string MaritalStatus { get; set; }
 
         /// <summary>

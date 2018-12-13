@@ -1,8 +1,5 @@
 ﻿using System.Data.Entity;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System;
 using NomadCars.Models;
 
 namespace NomadCars.DAL
@@ -11,26 +8,50 @@ namespace NomadCars.DAL
     {
         protected override void Seed(NomadDbContext context)
         {
-            // Zeeshan
-            SeedCarSpec(context);
-            // Zeeshan
-            SeedCars(context);
             // William
             SeedPeople(context);
+
             // William
             SeedStaff(context);
-            // Daniel
-            SeeAccessory(context);
+
             // William
             SeedAddresses(context);
+
+            // Zeeshan
+            SeedCarSpec(context);
+            
+            // Zeeshan
+            SeedCars(context);
+
             // Daniel
-            SeedImages(context);
+            //SeeAccessory(context);
+            // Daniel
+            //SeedImages(context);
             // Connor
-            SeedPayment(context);
+            //SeedPayment(context);
             // Connor
-            SeedPurchases(context);
+            //SeedPurchases(context);
+        }
 
+        private void SeedPeople(NomadDbContext context)
+        {
+            var PeopleList = new List<Person>
+            {
+                new Person
+                {
+                    PersonID = 1,
+                    FirstName = "William",
+                    LastName = "Foster",
+                    DateOfBirth = new System.DateTime(1998, 10, 10),
+                    Email = "william.foster@nomad.com",
+                    IsCustomer = false,
+                    IsStaff = true,
+                    MaritalStatus = "Single",
+                }
+            };
 
+            PeopleList.ForEach(p => context.People.Add(p));
+            context.SaveChanges();
         }
 
         /// <summary>
@@ -50,10 +71,14 @@ namespace NomadCars.DAL
                     Refund = 0.00m,
                     IntrestRate = 3.00m,
                     TransactionType = TransactionTypes.CARD,
-
-
+                    CarID = 1,
+                    PersonID = 1,
+                    StaffID = 1
                 }
             };
+
+            //PurchaseList.ForEach(p => context.Purchases.Add(p));
+            //context.SaveChanges();
         }
 
         private void SeedPayment(NomadDbContext context)
@@ -62,6 +87,9 @@ namespace NomadCars.DAL
             {
 
             };
+
+            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            context.SaveChanges();
         }
 
         private void SeedImages(NomadDbContext context)
@@ -70,6 +98,9 @@ namespace NomadCars.DAL
             {
 
             };
+
+            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            context.SaveChanges();
         }
 
         private void SeedAddresses(NomadDbContext context)
@@ -78,6 +109,9 @@ namespace NomadCars.DAL
             {
 
             };
+
+            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            context.SaveChanges();
         }
 
         private void SeeAccessory(NomadDbContext context)
@@ -86,6 +120,9 @@ namespace NomadCars.DAL
             {
 
             };
+
+            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            context.SaveChanges();
         }
 
         private void SeedStaff(NomadDbContext context)
@@ -94,14 +131,9 @@ namespace NomadCars.DAL
             {
 
             };
-        }
 
-        private void SeedPeople(NomadDbContext context)
-        {
-            var PurchaseList = new List<Purchase>
-            {
-
-            };
+            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            context.SaveChanges();
         }
 
         private void SeedCars(NomadDbContext context)
@@ -110,6 +142,9 @@ namespace NomadCars.DAL
             {
 
             };
+
+            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            context.SaveChanges();
         }
 
         private void SeedCarSpec(NomadDbContext context)
@@ -118,6 +153,9 @@ namespace NomadCars.DAL
             {
 
             };
+
+            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            context.SaveChanges();
         }
     }
 }
