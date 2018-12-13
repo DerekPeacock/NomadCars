@@ -15,6 +15,7 @@ namespace NomadCars.Models
     }
     public class Purchase
     {
+        public int PurchaseID { get; set; }
         /// <summary>
         /// A specific number given to each invoice in order for each to be identified within the database for the 
         /// purposes of tracking or record keeping, i.e. for end of week or annual car sales.
