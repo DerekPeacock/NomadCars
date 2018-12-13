@@ -2,7 +2,7 @@ using System;
 namespace NomadCars.Models
 {
     /// <summary>
-    /// Daniel's Class
+    /// William
     /// Each Member of staff is a Person working for Nomad Cars
     /// </summary>
     public class Staff
@@ -23,10 +23,21 @@ namespace NomadCars.Models
         /// </summary>
         public String JobPosition { get; set; }
 
+        /// <summary>
+        /// The monthly payment of the employee.
+        /// </summary>
         public decimal Salary { get; set; }
 
+        /// <summary>
+        /// The starting date of the employee's employment, 
+        /// measured in a numerical value e.g. 12/09/2013
+        /// </summary>
         public int StartDate { get; set; }
 
+        /// <summary>
+        ///  The URL of the image of the satff memeber,
+        ///  being used on the website.
+        /// </summary>
         public String ImageURL { get; set; }
 
         public String Description { get; set; }
