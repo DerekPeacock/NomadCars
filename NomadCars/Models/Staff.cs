@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace NomadCars.Models
 {
     /// <summary>
@@ -11,6 +13,7 @@ namespace NomadCars.Models
         /// A specific identification number that identifies the member 
         /// of staff within the database.
         /// </summary>
+        [ForeignKey("Person")]
         public int StaffID { get; set; }
         /// <summary>
         /// The department that the member of staff works for. 
@@ -41,9 +44,6 @@ namespace NomadCars.Models
         public String ImageURL { get; set; }
 
         public String Description { get; set; }
-
-        // Foriegn Key
-        public int PersonID { get; set; }
 
         public virtual Person Person { get; set; }
 

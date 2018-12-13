@@ -64,15 +64,16 @@ namespace NomadCars.Models
         /// A boolean statement that refers to whether or not the person 
         /// concerned is a customer.
         /// </summary>
-        public bool Customer { get; set; }
+        public bool IsCustomer { get; set; }
 
-        public int? StaffID { get; set; }
-       
-        public virtual Staff Staff { get; set; }
+        // Can be a member of staff and a customer, but must be at least one
+        public bool IsStaff { get; set; }
 
-        public int AdressID { get; set; }
+        //public int AdressID { get; set; }
 
         public virtual Address Address { get; set; }
+
+        public Staff Staff { get; set; }
 
         public ICollection<Purchase> PurchaseList;
 

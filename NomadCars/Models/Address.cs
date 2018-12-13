@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NomadCars.Models
 {
@@ -11,6 +12,7 @@ namespace NomadCars.Models
         /// <summary>
         /// A unique identification number used to identify the address details of a person within the database. This applies to both customers and staff. No other attribute was applied as the primary key as the other attributes are not unique enough to be an identifier.
         /// </summary>
+        [ForeignKey("Person")]
         public int AddressID { get; set; }
         
         /// <summary>
@@ -37,6 +39,8 @@ namespace NomadCars.Models
         /// A large area of bordered land within a country where a person will live.
         /// </summary>
         public string County { get; set; }
+
+        public virtual Person Person { get; set; }
 
     }
 }
