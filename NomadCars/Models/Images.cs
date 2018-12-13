@@ -7,6 +7,13 @@ using System.ComponentModel.DataAnnotations;
 /// </summary>
 namespace NomadCars.Models
 {
+    public enum ImageTypes
+    {
+        CAR_FRONT,
+        CAR_BACK,
+        CAR_INTERIOR
+    }
+
     public class Images
     {
         /// <summary>
