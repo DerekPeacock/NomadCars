@@ -44,6 +44,13 @@ namespace NomadCars.DAL
                 {
                     PurchaseID = 1,
                     InvoiceNumber =  "Invoice No 1001",
+                    IsInvoiced = "YES",
+                    HasRegistrationDocument = "YES",
+                    IsReturned = "NO",
+                    Refund = 0.00,
+                    IntrestRate = 3.00,
+                    TransactionType = CARD,
+
 
                 }
             };
