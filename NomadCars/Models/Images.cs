@@ -20,14 +20,14 @@ namespace NomadCars.Models
         /// our website.
         /// </summary>
         [Required, StringLength(255), DataType(DataType.ImageUrl)]
-        public String ImageURL;
+        public string ImageURL;
 
         /// <summary>
         /// A short description of what is being 
         /// displayed in the image.
         /// </summary>
         [Required, StringLength(255), Display(Name = "Description")]
-        public String Description;
+        public string Description;
 
         /// <summary>
         /// A message that will appear alongside 
@@ -35,7 +35,7 @@ namespace NomadCars.Models
         /// of the image's contents.
         /// </summary>
         [Required, StringLength(50)]
-        public String Caption;
+        public string Caption;
 
         /// <summary>
         /// Refers to the positioning of the car 
@@ -43,7 +43,7 @@ namespace NomadCars.Models
         /// front, back or interior.
         /// </summary>
         [Required, StringLength(20)]
-        public String ImageType;
+        public string ImageType;
 
         public ICollection<Car> car;
 
