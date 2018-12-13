@@ -1,9 +1,17 @@
 using System;
-public class Accessory {
-	private int accessoryTypeID;
-	private String description;
-	private String accessoryType;
+using System.Collections.Generic;
 
-	private Car car;
+namespace NomadCars.Models
+{
+    public class Accessory
+    {
+        public int AccessoryID { get; set; }
 
+        public string Description {get;set;}
+
+        public string AccessoryType { get; set; }
+
+        public virtual ICollection<Car> Cars { get; set; }
+
+    }
 }
