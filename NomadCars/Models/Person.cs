@@ -31,13 +31,13 @@ namespace NomadCars.Models
         /// <summary>
         /// The phone number of a person, assigned to a home phone.
         /// </summary>
-        [StringLength(16), DataType(DataType.PhoneNumber), Display(Name = "Home Phone Number")]
+        [StringLength(16), DataType(DataType.PhoneNumber), Display(Name = "Home Phone")]
         public string HomePhoneNumber { get; set; }
 
         /// <summary>
         /// The phone number of a person, assigned to their mobile phone.
         /// </summary>
-        [StringLength(16), DataType(DataType.PhoneNumber), Display(Name = "Mobile Phone NUmber")]
+        [StringLength(16), DataType(DataType.PhoneNumber), Display(Name = "Mobile Phone")]
         public string MobilePhoneNumber { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace NomadCars.Models
         /// <summary>
         /// The date of birth of the person
         /// </summary>
-        [Required, DataType(DataType.DateTime), Display(Name = "dd/mm/yy")]
+        [Required, DataType(DataType.DateTime), Display(Name = "Date of Birth")]
         public DateTime DateOfBirth { get; set; }
 
         /// <summary>
