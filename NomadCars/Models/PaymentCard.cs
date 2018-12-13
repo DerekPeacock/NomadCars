@@ -13,7 +13,7 @@ namespace NomadCars.Models
     public class PaymentCard
     {
         //A specific ID used to identify each card uniquely
-        public int CardID { get; set; }
+        public int PaymentCardID { get; set; }
         
         //This is the type of card that the customer will be using to make their purchase
         public CardTypes CardType { get; set; }

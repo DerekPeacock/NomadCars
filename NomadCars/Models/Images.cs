@@ -20,7 +20,7 @@ namespace NomadCars.Models
         /// A number assigned to each image as
         /// a unique identifier.
         /// </summary>
-        public int ImageID;
+        public int CarImageID;
 
         /// <summary>
         /// The URL of the image being used on 

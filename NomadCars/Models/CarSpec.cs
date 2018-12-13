@@ -11,7 +11,7 @@ namespace NomadCars.Models
         /// <summary>
         /// An identification number assigned to each car specification for the purposes of representing a specification within the database.
         /// </summary>
-        public int SpecID { get; set; }
+        public int CarSpecID { get; set; }
         /// <summary>
         /// What make the car is, all our cars are specifically BMW's
         /// </summary>
