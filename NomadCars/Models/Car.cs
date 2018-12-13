@@ -59,7 +59,7 @@ namespace NomadCars.Models
 
         public virtual ICollection<Accessory> AccessoriesList { get; set; }
 
-        public virtual ICollection<Images> ImagesList { get; set; }
+        public virtual ICollection<CarImage> ImagesList { get; set; }
         /// <summary>
         /// The car specification identification number, being used as a foreign key in the car entity. 
         /// This is so that the specifications of an individual car can be identified in the database.

@@ -14,7 +14,7 @@ namespace NomadCars.Models
         CAR_INTERIOR
     }
 
-    public class Images
+    public class CarImage
     {
         /// <summary>
         /// A number assigned to each image as
