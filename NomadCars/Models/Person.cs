@@ -31,25 +31,25 @@ namespace NomadCars.Models
         /// <summary>
         /// The phone number of a person, assigned to a home phone.
         /// </summary>
-        [StringLength(10), DataType(DataType.PhoneNumber), Display(Name = "Home Phone Number")]
-        public int HomePhoneNumber { get; set; }
+        [StringLength(16), DataType(DataType.PhoneNumber), Display(Name = "Home Phone Number")]
+        public string HomePhoneNumber { get; set; }
 
         /// <summary>
         /// The phone number of a person, assigned to their mobile phone.
         /// </summary>
-        [StringLength(10), DataType(DataType.PhoneNumber), Display(Name = "Mobile Phone NUmber")]
-        public int MobilePhoneNumber { get; set; }
+        [StringLength(16), DataType(DataType.PhoneNumber), Display(Name = "Mobile Phone NUmber")]
+        public string MobilePhoneNumber { get; set; }
 
         /// <summary>
         /// The e-mail held by a person by which they can be contacted
         /// </summary>
-        [Required, StringLength(10), Display(Name = "E-mail Address")]
+        [Required, StringLength(100), Display(Name = "E-mail Address")]
         public string Email { get; set; }
 
         /// <summary>
         /// The date of birth of the person
         /// </summary>
-        [Required, StringLength(8), DataType(DataType.DateTime), Display(Name = "dd/mm/yy")]
+        [Required, DataType(DataType.DateTime), Display(Name = "dd/mm/yy")]
         public DateTime DateOfBirth { get; set; }
 
         /// <summary>
@@ -71,7 +71,9 @@ namespace NomadCars.Models
         public virtual Staff Staff { get; set; }
 
         public int AdressID { get; set; }
+
         public virtual Address Address { get; set; }
+
         public ICollection<Purchase> PurchaseList;
 
         public virtual PaymentCard PaymentCard { get; set; }
