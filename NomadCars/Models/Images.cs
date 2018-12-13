@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 /// <summary>
-/// William
+/// Daniel
 /// </summary>
 namespace NomadCars.Models
 {

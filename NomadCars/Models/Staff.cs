@@ -2,7 +2,7 @@ using System;
 namespace NomadCars.Models
 {
     /// <summary>
-    /// Daniel's Class
+    /// William
     /// Each Member of staff is a Person working for Nomad Cars
     /// </summary>
     public class Staff

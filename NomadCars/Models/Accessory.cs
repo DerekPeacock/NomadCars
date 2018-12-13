@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Daniel
+/// </summary>
 namespace NomadCars.Models
 {
     public class Accessory
