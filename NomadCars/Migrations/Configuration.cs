@@ -1,13 +1,24 @@
-﻿using System.Data.Entity;
-using System.Collections.Generic;
-using NomadCars.Models;
-
-namespace NomadCars.DAL
+namespace NomadCars.Migrations
 {
-    public class NomadInitialiser : DropCreateDatabaseIfModelChanges<NomadDbContext>
+    using System.Data.Entity.Migrations;
+    using NomadCars.Models;
+    using NomadCars.DAL;
+    using System.Collections.Generic;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<NomadDbContext>
     {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+        }
+
         protected override void Seed(NomadDbContext context)
         {
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data.
+
             // William
             SeedPeople(context);
 
@@ -19,7 +30,7 @@ namespace NomadCars.DAL
 
             // Zeeshan
             SeedCarSpec(context);
-            
+
             // Zeeshan
             SeedCars(context);
 
@@ -28,7 +39,7 @@ namespace NomadCars.DAL
             // Daniel
             //SeedImages(context);
             // Connor
-            //SeedPayment(context);
+            //SeedPaymentCard(context);
             // Connor
             //SeedPurchases(context);
         }
@@ -81,81 +92,82 @@ namespace NomadCars.DAL
             //context.SaveChanges();
         }
 
-        private void SeedPayment(NomadDbContext context)
+        private void SeedPaymentCard(NomadDbContext context)
         {
-            var PurchaseList = new List<Purchase>
+            var PaymentCardList = new List<PaymentCard>
             {
 
             };
 
-            PurchaseList.ForEach(p => context.Purchases.Add(p));
-            context.SaveChanges();
+            //PaymentCardList.ForEach(p => context.PaymentCards.Add(p));
+            //context.SaveChanges();
         }
 
         private void SeedImages(NomadDbContext context)
         {
-            var PurchaseList = new List<Purchase>
+            var CarImageList = new List<CarImage>
             {
 
             };
 
-            PurchaseList.ForEach(p => context.Purchases.Add(p));
-            context.SaveChanges();
+            //CarImageList.ForEach(i => context.CarImages.Add(i));
+            //context.SaveChanges();
         }
 
         private void SeedAddresses(NomadDbContext context)
         {
-            var PurchaseList = new List<Purchase>
+            var AddressList = new List<Address>
             {
 
             };
 
-            PurchaseList.ForEach(p => context.Purchases.Add(p));
-            context.SaveChanges();
+            //AddressList.ForEach(a => context.Addresses.Add(a));
+            //context.SaveChanges();
         }
 
         private void SeeAccessory(NomadDbContext context)
         {
-            var PurchaseList = new List<Purchase>
+            var AccessoryList = new List<Accessory>
             {
 
             };
 
-            PurchaseList.ForEach(p => context.Purchases.Add(p));
-            context.SaveChanges();
+            //AccessoryList.ForEach(a => context.Accessories.Add(a));
+            //context.SaveChanges();
         }
 
         private void SeedStaff(NomadDbContext context)
         {
-            var PurchaseList = new List<Purchase>
+            var StaffList = new List<Staff>
             {
 
             };
 
-            PurchaseList.ForEach(p => context.Purchases.Add(p));
-            context.SaveChanges();
+            //StaffList.ForEach(s => context.Staff.Add(s));
+            //context.SaveChanges();
         }
 
         private void SeedCars(NomadDbContext context)
         {
-            var PurchaseList = new List<Purchase>
+            var CarList = new List<Car>
             {
 
             };
 
-            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            CarList.ForEach(c => context.Cars.Add(c));
             context.SaveChanges();
         }
 
         private void SeedCarSpec(NomadDbContext context)
         {
-            var PurchaseList = new List<Purchase>
+            var SpecList = new List<CarSpec>
             {
 
             };
 
-            PurchaseList.ForEach(p => context.Purchases.Add(p));
+            SpecList.ForEach(c => context.CarSpecs.Add(c));
             context.SaveChanges();
         }
     }
 }
+
