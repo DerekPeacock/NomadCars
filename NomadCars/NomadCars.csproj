@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="DAL\NomadDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -188,6 +189,10 @@
     <Compile Include="Migrations\201812150953092_ChangeMaritalStatus.cs" />
     <Compile Include="Migrations\201812150953092_ChangeMaritalStatus.Designer.cs">
       <DependentUpon>201812150953092_ChangeMaritalStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812151031223_ChangeCounties.cs" />
+    <Compile Include="Migrations\201812151031223_ChangeCounties.Designer.cs">
+      <DependentUpon>201812151031223_ChangeCounties.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
@@ -266,6 +271,11 @@
     <Content Include="Views\Addresses\Details.cshtml" />
     <Content Include="Views\Addresses\Edit.cshtml" />
     <Content Include="Views\Addresses\Index.cshtml" />
+    <Content Include="Views\People\Create.cshtml" />
+    <Content Include="Views\People\Delete.cshtml" />
+    <Content Include="Views\People\Details.cshtml" />
+    <Content Include="Views\People\Edit.cshtml" />
+    <Content Include="Views\People\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -289,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812150953092_ChangeMaritalStatus.resx">
       <DependentUpon>201812150953092_ChangeMaritalStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812151031223_ChangeCounties.resx">
+      <DependentUpon>201812151031223_ChangeCounties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

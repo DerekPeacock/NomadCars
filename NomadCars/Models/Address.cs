@@ -3,6 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NomadCars.Models
 {
+    public enum Counties
+    {
+        Buckinghamshire,
+        Bedfordshire,
+        Hertfordshire,
+        London,
+        Northamtonshire,
+        Oxfordshire
+    }
+
     /// <summary>
     /// William
     /// </summary>
@@ -38,7 +48,7 @@ namespace NomadCars.Models
         /// <summary>
         /// A large area of bordered land within a country where a person will live.
         /// </summary>
-        public string County { get; set; }
+        public Counties County { get; set; }
 
         public virtual Person Person { get; set; }
 
