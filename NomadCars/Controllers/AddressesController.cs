@@ -40,7 +40,7 @@ namespace NomadCars.Controllers
         // GET: Addresses/Create
         public ActionResult Create()
         {
-            ViewBag.AddressID = new SelectList(db.People, "PersonID", "FirstName");
+            ViewBag.AddressID = new SelectList(db.People, "PersonID", "FullName");
             return View();
         }
 

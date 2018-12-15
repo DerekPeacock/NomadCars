@@ -186,6 +186,10 @@
     <Compile Include="Migrations\201812142113597_InitialCreate.Designer.cs">
       <DependentUpon>201812142113597_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812150953092_ChangeMaritalStatus.cs" />
+    <Compile Include="Migrations\201812150953092_ChangeMaritalStatus.Designer.cs">
+      <DependentUpon>201812150953092_ChangeMaritalStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -288,6 +292,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812142113597_InitialCreate.resx">
       <DependentUpon>201812142113597_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812150953092_ChangeMaritalStatus.resx">
+      <DependentUpon>201812150953092_ChangeMaritalStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -57,7 +57,7 @@ namespace NomadCars.Migrations
                     Email = "william.foster@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = "Single",
+                    MaritalStatus = MaritalSatusOptions.SINGLE
                 }
             };
 

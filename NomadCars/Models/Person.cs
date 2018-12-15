@@ -64,8 +64,8 @@ namespace NomadCars.Models
         /// e.g. single, married or divorced. This kind of information is often 
         /// used in forms to determine details such as financial needs.
         /// </summary>
-        [Display(Name = "Marital Status"), StringLength(20)]
-        public string MaritalStatus { get; set; }
+        [Display(Name = "Marital Status")]
+        public MaritalSatusOptions MaritalStatus { get; set; }
 
         /// <summary>
         /// A boolean statement that refers to whether or not the person 
@@ -85,6 +85,11 @@ namespace NomadCars.Models
         public ICollection<Purchase> PurchaseList;
 
         public virtual PaymentCard PaymentCard { get; set; }
+
+        public string FullName
+        {
+            get { return FirstName + " " + LastName; }
+        }
 
     }
 }
