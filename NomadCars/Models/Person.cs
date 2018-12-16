@@ -6,10 +6,10 @@ namespace NomadCars.Models
 {
     public enum MaritalSatusOptions
     {
-        SINGLE,
-        MARRIED,
-        DIVORCED,
-        OTHER
+        Single,
+        Married,
+        Divorced,
+        Other
     }
 
     /// <summary>
@@ -72,9 +72,11 @@ namespace NomadCars.Models
         /// A boolean statement that refers to whether or not the person 
         /// concerned is a customer.
         /// </summary>
+        [Display(Name ="Customer")]
         public bool IsCustomer { get; set; }
 
         // Can be a member of staff and a customer, but must be at least one
+        [Display(Name ="Staff")]
         public bool IsStaff { get; set; }
 
         //public int AdressID { get; set; }

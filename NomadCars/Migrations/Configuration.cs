@@ -56,12 +56,112 @@ namespace NomadCars.Migrations
                     PersonID = 1,
                     FirstName = "William",
                     LastName = "Foster",
-                    DateOfBirth = new System.DateTime(1998, 10, 10),
+                    DateOfBirth = new System.DateTime(1994, 8, 28),
                     Email = "william.foster@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = MaritalSatusOptions.SINGLE
+                    MaritalStatus = MaritalSatusOptions.Single
+                },
+                new Person
+                {
+                    PersonID = 2,
+                    FirstName = "Connor",
+                    LastName = "Patey",
+                    DateOfBirth = new System.DateTime(1999, 10, 10),
+                    Email = "connor.patey@nomad.com",
+                    IsCustomer = false,
+                    IsStaff = true,
+                    MaritalStatus = MaritalSatusOptions.Single
+                },
+                new Person
+                {
+                    PersonID = 3,
+                    FirstName = "Daniel",
+                    LastName = "Schafer-Smith",
+                    DateOfBirth = new System.DateTime(1999, 10, 10),
+                    Email = "daniel.schafer_smith@nomad.com",
+                    IsCustomer = false,
+                    IsStaff = true,
+                    MaritalStatus = MaritalSatusOptions.Single
+                },
+                new Person
+                {
+                    PersonID = 4,
+                    FirstName = "Zeeshan",
+                    LastName = "Akhlaq",
+                    DateOfBirth = new System.DateTime(1999, 10, 10),
+                    Email = "zeeshan.akhlaq@nomad.com",
+                    IsCustomer = false,
+                    IsStaff = true,
+                    MaritalStatus = MaritalSatusOptions.Single
+                },
+                new Person
+                {
+                    PersonID = 5,
+                    FirstName = "Tomas",
+                    LastName = "Green",
+                    DateOfBirth = new System.DateTime(1994, 12, 2),
+                    Email = "TomasGreen94@gmail.com",
+                    IsCustomer = true,
+                    IsStaff = false,
+                    MaritalStatus = MaritalSatusOptions.Single
+                },
+                new Person
+                {
+                    PersonID = 6,
+                    FirstName = "Ben",
+                    LastName = "Miller",
+                    DateOfBirth = new System.DateTime(1992, 3, 12),
+                    Email = "Miller92@gmail.com",
+                    IsCustomer = true,
+                    IsStaff = false,
+                    MaritalStatus = MaritalSatusOptions.Single
+                },
+                new Person
+                {
+                    PersonID = 7,
+                    FirstName = "Lilly",
+                    LastName = "Erickson",
+                    DateOfBirth = new System.DateTime(1985, 7, 30),
+                    Email = "Lilly1985@gmail.com",
+                    IsCustomer = true,
+                    IsStaff = false,
+                    MaritalStatus = MaritalSatusOptions.Married
+                },
+                new Person
+                {
+                    PersonID = 8,
+                    FirstName = "Joshua",
+                    LastName = "Knight",
+                    DateOfBirth = new System.DateTime(1990, 11, 23),
+                    Email = "JoshKnight90@gmail.com",
+                    IsCustomer = true,
+                    IsStaff = false,
+                    MaritalStatus = MaritalSatusOptions.Married
+                },
+                new Person
+                {
+                    PersonID = 9,
+                    FirstName = "Emily",
+                    LastName = "White",
+                    DateOfBirth = new System.DateTime(1981, 4, 5),
+                    Email = "EWhite@gmail.com",
+                    IsCustomer = true,
+                    IsStaff = false,
+                    MaritalStatus = MaritalSatusOptions.Divorced
+                },
+                new Person
+                {
+                    PersonID = 10,
+                    FirstName = "Eliot",
+                    LastName = "Meyers",
+                    DateOfBirth = new System.DateTime(1956, 9, 21),
+                    Email = "EliotMey@gmail.com",
+                    IsCustomer = true,
+                    IsStaff = false,
+                    MaritalStatus = MaritalSatusOptions.Other
                 }
+
             };
 
             PeopleList.ForEach(p => context.People.AddOrUpdate(i => i.LastName, p));
@@ -141,7 +241,7 @@ namespace NomadCars.Migrations
                 new Staff
                 { 
                     StaffID = 2,
-                    Department = DepartmentOptions.MANAGEMENT,
+                    Department = DepartmentOptions.Management,
                     JobPosition = JobPositionOptions.SalesManager,
                     Salary = 24000m,
                     StartDate = new System.DateTime(2017,10, 10),

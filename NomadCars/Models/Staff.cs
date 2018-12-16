@@ -10,9 +10,9 @@ namespace NomadCars.Models
     /// </summary>
     public enum DepartmentOptions
     {
-        SALES,
-        MANAGEMENT,
-        ACCOUNTS,
+        Sales,
+        Management,
+        Accounts,
     }
 
     public enum JobPositionOptions
@@ -42,6 +42,7 @@ namespace NomadCars.Models
         /// The specific position that the member of staff holds within 
         /// their department, e.g. sales representative or database administrator.
         /// </summary>
+        [Display(Name ="Job Position")]
         public JobPositionOptions JobPosition { get; set; }
 
         /// <summary>
@@ -56,7 +57,8 @@ namespace NomadCars.Models
         /// measured in a numerical value e.g. 12/09/2013
         /// </summary>
         /// 
-        [Required, DataType(DataType.DateTime), Display(Name = "Start Date"), DisplayFormat(DataFormatString = "{0:d}",ApplyFormatInEditMode =true)]
+        [Required, DataType(DataType.DateTime), Display(Name = "Start Date"), 
+            DisplayFormat(DataFormatString = "{0:d}",ApplyFormatInEditMode =true)]
         public DateTime StartDate { get; set; }
 
         /// <summary>
