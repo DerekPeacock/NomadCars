@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NomadCars.Models
@@ -7,6 +8,21 @@ namespace NomadCars.Models
     /// William
     /// Each Member of staff is a Person working for Nomad Cars
     /// </summary>
+    public enum DepartmentOptions
+    {
+        SALES,
+        MANAGEMENT,
+        ACCOUNTS,
+    }
+
+    public enum JobPositionOptions
+    {
+        SalesRepresentative,
+        SalesManager,
+        LocationManager,
+        Accountant
+    }
+
     public class Staff
     {
         /// <summary>
@@ -15,27 +31,33 @@ namespace NomadCars.Models
         /// </summary>
         [ForeignKey("Person")]
         public int StaffID { get; set; }
+        
         /// <summary>
         /// The department that the member of staff works for. 
         /// The departments include sales, database administration and management
         /// </summary>
-        public String Department { get; set; }
+        public DepartmentOptions Department { get; set; }
+        
         /// <summary>
         /// The specific position that the member of staff holds within 
         /// their department, e.g. sales representative or database administrator.
         /// </summary>
-        public String JobPosition { get; set; }
+        public JobPositionOptions JobPosition { get; set; }
 
         /// <summary>
         /// The monthly payment of the employee.
         /// </summary>
+        [Required,DisplayFormat(DataFormatString ="{0:c}", ApplyFormatInEditMode = true)]
+        [Display(Name ="Annual Salary")]
         public decimal Salary { get; set; }
 
         /// <summary>
         /// The starting date of the employee's employment, 
         /// measured in a numerical value e.g. 12/09/2013
         /// </summary>
-        public int StartDate { get; set; }
+        /// 
+        [Required, DataType(DataType.DateTime), Display(Name = "Start Date"), DisplayFormat(DataFormatString = "{0:d}",ApplyFormatInEditMode =true)]
+        public DateTime StartDate { get; set; }
 
         /// <summary>
         ///  The URL of the image of the satff memeber,

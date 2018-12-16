@@ -8,7 +8,8 @@ namespace NomadCars.Models
     {
         SINGLE,
         MARRIED,
-        DIVORCED
+        DIVORCED,
+        OTHER
     }
 
     /// <summary>

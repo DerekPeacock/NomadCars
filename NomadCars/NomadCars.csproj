@@ -178,6 +178,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
+    <Compile Include="Controllers\StaffsController.cs" />
     <Compile Include="DAL\NomadDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,6 +194,14 @@
     <Compile Include="Migrations\201812151031223_ChangeCounties.cs" />
     <Compile Include="Migrations\201812151031223_ChangeCounties.Designer.cs">
       <DependentUpon>201812151031223_ChangeCounties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812161524344_ChangeStaffOptions.cs" />
+    <Compile Include="Migrations\201812161524344_ChangeStaffOptions.Designer.cs">
+      <DependentUpon>201812161524344_ChangeStaffOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812161543112_ChangeStartDate.cs" />
+    <Compile Include="Migrations\201812161543112_ChangeStartDate.Designer.cs">
+      <DependentUpon>201812161543112_ChangeStartDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
@@ -276,6 +285,15 @@
     <Content Include="Views\People\Details.cshtml" />
     <Content Include="Views\People\Edit.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
+    <Content Include="Views\Staffs\Create.cshtml" />
+    <Content Include="Views\Staffs\Delete.cshtml" />
+    <Content Include="Views\Staffs\Details.cshtml" />
+    <Content Include="Views\Staffs\Edit.cshtml" />
+    <Content Include="Views\Staffs\Index.cshtml" />
+    <Content Include="Views\Shared\_StaffLayout.cshtml" />
+    <Content Include="Views\People\_ViewStart.cshtml" />
+    <Content Include="Views\Staffs\_ViewStart.cshtml" />
+    <Content Include="Views\Addresses\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812151031223_ChangeCounties.resx">
       <DependentUpon>201812151031223_ChangeCounties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161524344_ChangeStaffOptions.resx">
+      <DependentUpon>201812161524344_ChangeStaffOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161543112_ChangeStartDate.resx">
+      <DependentUpon>201812161543112_ChangeStartDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

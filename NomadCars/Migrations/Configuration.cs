@@ -1,9 +1,12 @@
 namespace NomadCars.Migrations
 {
     using System.Data.Entity.Migrations;
+    using System.Data.Entity;
     using NomadCars.Models;
     using NomadCars.DAL;
     using System.Collections.Generic;
+    using System.Linq;
+
 
     internal sealed class Configuration : DbMigrationsConfiguration<NomadDbContext>
     {
@@ -61,7 +64,7 @@ namespace NomadCars.Migrations
                 }
             };
 
-            PeopleList.ForEach(p => context.People.Add(p));
+            PeopleList.ForEach(p => context.People.AddOrUpdate(i => i.LastName, p));
             context.SaveChanges();
         }
 
@@ -88,7 +91,6 @@ namespace NomadCars.Migrations
                 }
             };
 
-            //PurchaseList.ForEach(p => context.Purchases.Add(p));
             //context.SaveChanges();
         }
 
@@ -99,7 +101,6 @@ namespace NomadCars.Migrations
 
             };
 
-            //PaymentCardList.ForEach(p => context.PaymentCards.Add(p));
             //context.SaveChanges();
         }
 
@@ -110,7 +111,6 @@ namespace NomadCars.Migrations
 
             };
 
-            //CarImageList.ForEach(i => context.CarImages.Add(i));
             //context.SaveChanges();
         }
 
@@ -121,7 +121,6 @@ namespace NomadCars.Migrations
 
             };
 
-            //AddressList.ForEach(a => context.Addresses.Add(a));
             //context.SaveChanges();
         }
 
@@ -132,7 +131,6 @@ namespace NomadCars.Migrations
 
             };
 
-            //AccessoryList.ForEach(a => context.Accessories.Add(a));
             //context.SaveChanges();
         }
 
@@ -140,11 +138,18 @@ namespace NomadCars.Migrations
         {
             var StaffList = new List<Staff>
             {
-
+                new Staff
+                { 
+                    StaffID = 2,
+                    Department = DepartmentOptions.MANAGEMENT,
+                    JobPosition = JobPositionOptions.SalesManager,
+                    Salary = 24000m,
+                    StartDate = new System.DateTime(2017,10, 10),
+                }
             };
 
-            //StaffList.ForEach(s => context.Staff.Add(s));
-            //context.SaveChanges();
+            StaffList.ForEach(s => context.Staff.AddOrUpdate(p => p.StaffID, s));
+            context.SaveChanges();
         }
 
         private void SeedCars(NomadDbContext context)
@@ -154,7 +159,7 @@ namespace NomadCars.Migrations
 
             };
 
-            CarList.ForEach(c => context.Cars.Add(c));
+            CarList.ForEach(c => context.Cars.AddOrUpdate(p => p.CarID, c));
             context.SaveChanges();
         }
 
@@ -165,7 +170,7 @@ namespace NomadCars.Migrations
 
             };
 
-            SpecList.ForEach(c => context.CarSpecs.Add(c));
+            SpecList.ForEach(c => context.CarSpecs.AddOrUpdate(p => p.CarSpecID, c));
             context.SaveChanges();
         }
     }
