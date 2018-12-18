@@ -7,13 +7,13 @@ namespace NomadCars.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class NoChanges : IMigrationMetadata
+    public sealed partial class ResetMigrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(NoChanges));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ResetMigrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812181455341_NoChanges"; }
+            get { return "201812182011136_ResetMigrations"; }
         }
         
         string IMigrationMetadata.Source

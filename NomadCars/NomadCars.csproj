@@ -184,33 +184,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812142113597_InitialCreate.cs" />
-    <Compile Include="Migrations\201812142113597_InitialCreate.Designer.cs">
-      <DependentUpon>201812142113597_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812150953092_ChangeMaritalStatus.cs" />
-    <Compile Include="Migrations\201812150953092_ChangeMaritalStatus.Designer.cs">
-      <DependentUpon>201812150953092_ChangeMaritalStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812151031223_ChangeCounties.cs" />
-    <Compile Include="Migrations\201812151031223_ChangeCounties.Designer.cs">
-      <DependentUpon>201812151031223_ChangeCounties.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812161524344_ChangeStaffOptions.cs" />
-    <Compile Include="Migrations\201812161524344_ChangeStaffOptions.Designer.cs">
-      <DependentUpon>201812161524344_ChangeStaffOptions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812161543112_ChangeStartDate.cs" />
-    <Compile Include="Migrations\201812161543112_ChangeStartDate.Designer.cs">
-      <DependentUpon>201812161543112_ChangeStartDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812181438022_CarSpecUpdates.cs" />
-    <Compile Include="Migrations\201812181438022_CarSpecUpdates.Designer.cs">
-      <DependentUpon>201812181438022_CarSpecUpdates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812181455341_NoChanges.cs" />
-    <Compile Include="Migrations\201812181455341_NoChanges.Designer.cs">
-      <DependentUpon>201812181455341_NoChanges.cs</DependentUpon>
+    <Compile Include="Migrations\201812182011136_ResetMigrations.cs" />
+    <Compile Include="Migrations\201812182011136_ResetMigrations.Designer.cs">
+      <DependentUpon>201812182011136_ResetMigrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
@@ -330,26 +306,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812142113597_InitialCreate.resx">
-      <DependentUpon>201812142113597_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812150953092_ChangeMaritalStatus.resx">
-      <DependentUpon>201812150953092_ChangeMaritalStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812151031223_ChangeCounties.resx">
-      <DependentUpon>201812151031223_ChangeCounties.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812161524344_ChangeStaffOptions.resx">
-      <DependentUpon>201812161524344_ChangeStaffOptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812161543112_ChangeStartDate.resx">
-      <DependentUpon>201812161543112_ChangeStartDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812181438022_CarSpecUpdates.resx">
-      <DependentUpon>201812181438022_CarSpecUpdates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812181455341_NoChanges.resx">
-      <DependentUpon>201812181455341_NoChanges.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812182011136_ResetMigrations.resx">
+      <DependentUpon>201812182011136_ResetMigrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

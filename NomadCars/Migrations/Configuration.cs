@@ -216,7 +216,7 @@ namespace NomadCars.Migrations
 
         private void SeedAddresses(NomadDbContext context)
         {
-            var AddressList = new List<Address>
+            var addressList = new List<Address>
             {
                 new Address
                 {
@@ -310,7 +310,8 @@ namespace NomadCars.Migrations
                 }
             };
 
-            //context.SaveChanges();
+            addressList.ForEach(s => context.Addresses.AddOrUpdate(p => p.AddressID, s));
+            context.SaveChanges();
         }
 
         private void SeeAccessory(NomadDbContext context)
