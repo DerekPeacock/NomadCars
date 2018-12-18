@@ -175,6 +175,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddressesController.cs" />
+    <Compile Include="Controllers\CarSpecsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
@@ -203,9 +204,13 @@
     <Compile Include="Migrations\201812161543112_ChangeStartDate.Designer.cs">
       <DependentUpon>201812161543112_ChangeStartDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812181436308_AddressAnnotation.cs" />
-    <Compile Include="Migrations\201812181436308_AddressAnnotation.Designer.cs">
-      <DependentUpon>201812181436308_AddressAnnotation.cs</DependentUpon>
+    <Compile Include="Migrations\201812181438022_CarSpecUpdates.cs" />
+    <Compile Include="Migrations\201812181438022_CarSpecUpdates.Designer.cs">
+      <DependentUpon>201812181438022_CarSpecUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812181455341_NoChanges.cs" />
+    <Compile Include="Migrations\201812181455341_NoChanges.Designer.cs">
+      <DependentUpon>201812181455341_NoChanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
@@ -298,6 +303,11 @@
     <Content Include="Views\People\_ViewStart.cshtml" />
     <Content Include="Views\Staffs\_ViewStart.cshtml" />
     <Content Include="Views\Addresses\_ViewStart.cshtml" />
+    <Content Include="Views\CarSpecs\Create.cshtml" />
+    <Content Include="Views\CarSpecs\Delete.cshtml" />
+    <Content Include="Views\CarSpecs\Details.cshtml" />
+    <Content Include="Views\CarSpecs\Edit.cshtml" />
+    <Content Include="Views\CarSpecs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -331,8 +341,11 @@
     <EmbeddedResource Include="Migrations\201812161543112_ChangeStartDate.resx">
       <DependentUpon>201812161543112_ChangeStartDate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812181436308_AddressAnnotation.resx">
-      <DependentUpon>201812181436308_AddressAnnotation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812181438022_CarSpecUpdates.resx">
+      <DependentUpon>201812181438022_CarSpecUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812181455341_NoChanges.resx">
+      <DependentUpon>201812181455341_NoChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

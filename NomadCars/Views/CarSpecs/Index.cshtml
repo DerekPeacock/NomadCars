@@ -1,0 +1,129 @@
+﻿@model IEnumerable<NomadCars.Models.CarSpec>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EngineSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BootCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Petrol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MPG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diesel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Electric)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seats)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopSpeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DriveTrain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BodyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Range)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EngineSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BootCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Petrol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MPG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diesel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Electric)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seats)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TopSpeed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DriveTrain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BodyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Range)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CarSpecID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CarSpecID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CarSpecID })
+        </td>
+    </tr>
+}
+
+</table>

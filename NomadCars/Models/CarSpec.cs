@@ -1,11 +1,64 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 /// <summary>
 /// Zeeshan
 /// </summary>
 namespace NomadCars.Models
 {
+    public enum CarMakes
+    {
+        BMW
+    }
+
+    public enum CarModels
+    {
+        BMW_330d,
+        BMW_420d,
+        BMW_118d,
+        BMW_X1
+    }
+
+    public enum EngineSizes
+    {
+        [Description("2999 cc")]
+        CC_2999,
+        [Description("1999 cc")]
+        CC_1999,
+        [Description("1799 cc")]
+        CC_1799
+    }
+
+    public enum TaxGroups
+    {
+        A,
+        B,
+        C,
+        D,
+        E
+    }
+
+    public enum DriveTrains
+    {
+        [Description("Front Wheel Drive")]
+        Front_Wheel_Drive,
+        [Description("Rear Wheel Drive")]
+        Rear_Wheel_Drive,
+        [Description("All Wheel Drive")]
+        All_Wheel_Drive
+    }
+
+    public enum BodyTypes
+    {
+        Coupe,
+        Convertible,
+        Estate,
+        Hatchback,
+        Saloon,
+        SUV
+        
+    }
     public class CarSpec
     {
         /// <summary>
@@ -15,15 +68,15 @@ namespace NomadCars.Models
         /// <summary>
         /// What make the car is, all our cars are specifically BMW's
         /// </summary>
-        public string Make { get; set; }
+        public CarMakes Make { get; set; }
         /// <summary>
         /// What specific model number the car has been given by BMW
         /// </summary>
-        public string Model { get; set; }
+        public CarModels  Model { get; set; }
         /// <summary>
         /// Measured in cc. We are limiting this to one Engine Size only for a particular make and model
         /// </summary>
-        public int EngineSize { get; set; }
+        public EngineSizes EngineSize { get; set; }
         /// <summary>
         /// How many doors the car has including the trunk door
         /// </summary>
@@ -39,11 +92,11 @@ namespace NomadCars.Models
         /// <summary>
         /// The amount of power the car can put out at maximum throttle
         /// </summary>
-        public int BHP { get; set; }
+        public Nullable<int> BHP { get; set; }
         /// <summary>
         /// Measured in litres
         /// </summary>
-        public int BootCapacity { get; set; }
+        public Nullable<int> BootCapacity { get; set; }
         /// <summary>
         /// Type of fuel the specific BMW takes.
         /// </summary>
@@ -67,7 +120,7 @@ namespace NomadCars.Models
         /// <summary>
         /// What tax band the BMW belongs in depending on emissions
         /// </summary>
-        public string TaxGroup { get; set; }
+        public TaxGroups TaxGroup { get; set; }
         /// <summary>
         /// What the top speed of the BMW is, measured in MPH (Miles Per Hour)
         /// </summary>
@@ -75,11 +128,11 @@ namespace NomadCars.Models
         /// <summary>
         /// Whether the car is Front Wheel Drive (FWD), Rear Wheel Drive (RWD) or All/4 Wheel Drive (AWD/4WD)
         /// </summary>
-        public string Drivetrain { get; set; }
+        public DriveTrains DriveTrain { get; set; }
         /// <summary>
         /// A specific style of build that alters how the cars is labeled e.g. as a hatchback or sedan.
         /// </summary>
-        public string BodyType { get; set; }
+        public BodyTypes BodyType { get; set; }
         /// <summary>
         /// The number of miles an electric car can do before the battery is depleted.
         /// </summary>
