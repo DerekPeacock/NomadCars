@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201812161543112_ChangeStartDate.Designer.cs">
       <DependentUpon>201812161543112_ChangeStartDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812181436308_AddressAnnotation.cs" />
+    <Compile Include="Migrations\201812181436308_AddressAnnotation.Designer.cs">
+      <DependentUpon>201812181436308_AddressAnnotation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -326,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812161543112_ChangeStartDate.resx">
       <DependentUpon>201812161543112_ChangeStartDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812181436308_AddressAnnotation.resx">
+      <DependentUpon>201812181436308_AddressAnnotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

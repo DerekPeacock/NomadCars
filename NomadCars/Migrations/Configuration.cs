@@ -218,6 +218,42 @@ namespace NomadCars.Migrations
         {
             var AddressList = new List<Address>
             {
+                new Address
+                {
+                    AddressID = 1,
+                    House = "8",
+                    StreetName = "Kestrel Way",
+                    TownName = "Aylesbury",
+                    Postcode = "HP190GH",
+                    County = Counties.Buckinghamshire
+                },
+                new Address
+                {
+                    AddressID = 2,
+                    House = "22",
+                    StreetName = "Iron Road",
+                    TownName = "Aylesbury",
+                    Postcode = "HP208UG",
+                    County = Counties.Buckinghamshire
+                },
+                new Address
+                {
+                    AddressID = 3,
+                    House = "12",
+                    StreetName = "Mercia Close",
+                    TownName = "Aylesbury",
+                    Postcode = "HP214OF",
+                    County = Counties.Buckinghamshire
+                },
+                new Address
+                {
+                    AddressID = 4,
+                    House = "43",
+                    StreetName = "Potters Way",
+                    TownName = "Chesham",
+                    Postcode = "HP236LT",
+                    County = Counties.Buckinghamshire
+                }
 
             };
 
@@ -240,12 +276,37 @@ namespace NomadCars.Migrations
             {
                 new Staff
                 { 
-                    StaffID = 2,
+                    StaffID = 1,
                     Department = DepartmentOptions.Management,
                     JobPosition = JobPositionOptions.SalesManager,
                     Salary = 24000m,
-                    StartDate = new System.DateTime(2017,10, 10),
+                    StartDate = new System.DateTime(2017,10, 10)
+                },
+                new Staff
+                {
+                    StaffID = 2,
+                    Department = DepartmentOptions.Accounts,
+                    JobPosition = JobPositionOptions.Accountant,
+                    Salary = 28000m,
+                    StartDate = new System.DateTime(2017, 10, 10)
+                },
+                new Staff
+                {
+                    StaffID = 3,
+                    Department = DepartmentOptions.Management,
+                    JobPosition = JobPositionOptions.LocationManager,
+                    Salary = 30000m,
+                    StartDate = new System.DateTime(2017, 10, 10)
+                },
+                new Staff
+                {
+                    StaffID = 4,
+                    Department = DepartmentOptions.Sales,
+                    JobPosition = JobPositionOptions.SalesRepresentative,
+                    Salary = 21000m,
+                    StartDate = new System.DateTime(2017, 10, 10)
                 }
+
             };
 
             StaffList.ForEach(s => context.Staff.AddOrUpdate(p => p.StaffID, s));
