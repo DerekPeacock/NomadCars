@@ -339,7 +339,7 @@ namespace NomadCars.Migrations
                     TaxGroup = TaxGroups.D,
                     BodyType = BodyTypes.Coupe,
                     DriveTrain = DriveTrains.Rear_Wheel_Drive,
-                    TopSpeed = 180,
+                    TopSpeed = 160,
                     Doors = 4,
                     Range = 300,
                     EngineSize = EngineSizes.CC_1999,
@@ -347,8 +347,52 @@ namespace NomadCars.Migrations
                     Width = 2017,
                     Seats = 5,
                     BHP = 181,
-                    BootCapacity = 5,
+                    BootCapacity = 23,
                     MPG = 40
+                },
+                new CarSpec
+                {
+                    CarSpecID  = 2,
+                    Make = CarMakes.BMW,
+                    Model = CarModels.BMW_330d,
+                    Petrol = false,
+                    Diesel = true,
+                    Electric = false,
+                    TaxGroup = TaxGroups.E,
+                    BodyType = BodyTypes.Coupe,
+                    DriveTrain = DriveTrains.Rear_Wheel_Drive,
+                    TopSpeed = 160,
+                    Doors = 4,
+                    Range = 250,
+                    EngineSize = EngineSizes.CC_2999,
+                    Length = 4633,
+                    Width = 2031,
+                    Seats = 5,
+                    BHP = 254,
+                    BootCapacity = 10,
+                    MPG = 20
+                },
+                new CarSpec
+                {
+                    CarSpecID  = 3,
+                    Make = CarMakes.BMW,
+                    Model = CarModels.BMW_116d,
+                    Petrol = false,
+                    Diesel = true,
+                    Electric = false,
+                    TaxGroup = TaxGroups.E,
+                    BodyType = BodyTypes.Coupe,
+                    DriveTrain = DriveTrains.Rear_Wheel_Drive,
+                    TopSpeed = 140,
+                    Doors = 4,
+                    Range = 320,
+                    EngineSize = EngineSizes.CC_1499,
+                    Length = 4324,
+                    Width = 1765,
+                    Seats = 5,
+                    BHP = 116,
+                    BootCapacity = 12,
+                    MPG = 66
                 }
             };
 

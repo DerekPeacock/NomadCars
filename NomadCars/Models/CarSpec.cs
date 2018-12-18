@@ -16,7 +16,7 @@ namespace NomadCars.Models
     {
         BMW_330d,
         BMW_420d,
-        BMW_118d,
+        BMW_116d,
         BMW_X1
     }
 
@@ -26,8 +26,8 @@ namespace NomadCars.Models
         CC_2999,
         [Description("1999 cc")]
         CC_1999,
-        [Description("1799 cc")]
-        CC_1799
+        [Description("1499 cc")]
+        CC_1499
     }
 
     public enum TaxGroups
