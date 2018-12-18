@@ -218,7 +218,96 @@ namespace NomadCars.Migrations
         {
             var AddressList = new List<Address>
             {
-
+                new Address
+                {
+                    AddressID = 1,
+                    House = "8",
+                    StreetName = "Kestrel Way",
+                    TownName = "Aylesbury",
+                    Postcode = "HP190GH",
+                    County = Counties.Buckinghamshire
+                },
+                new Address
+                {
+                    AddressID = 2,
+                    House = "22",
+                    StreetName = "Iron Road",
+                    TownName = "Aylesbury",
+                    Postcode = "HP208UG",
+                    County = Counties.Buckinghamshire
+                },
+                new Address
+                {
+                    AddressID = 3,
+                    House = "12",
+                    StreetName = "Mercia Close",
+                    TownName = "Aylesbury",
+                    Postcode = "HP214OF",
+                    County = Counties.Buckinghamshire
+                },
+                new Address
+                {
+                    AddressID = 4,
+                    House = "43",
+                    StreetName = "Potters Way",
+                    TownName = "Chesham",
+                    Postcode = "HP236LV",
+                    County = Counties.Buckinghamshire
+                },
+                new Address
+                {
+                    AddressID = 5,
+                    House = "18",
+                    StreetName = "Victory Way",
+                    TownName = "Oxford",
+                    Postcode = "OX181LT",
+                    County = Counties.Oxfordshire
+                },
+                new Address
+                {
+                    AddressID = 6,
+                    House = "Forresters Cottage",
+                    StreetName = "Woodland Road",
+                    TownName = "Cloverfield",
+                    Postcode = "HP38UK",
+                    County = Counties.Hertfordshire
+                },
+                new Address
+                {
+                    AddressID = 7,
+                    House = "11",
+                    StreetName = "Gediminas Road",
+                    TownName = "Camden",
+                    Postcode = "NW35VI",
+                    County = Counties.London
+                },
+                new Address
+                {
+                    AddressID = 8,
+                    House = "Old Station House",
+                    StreetName = "Cane Row",
+                    TownName = "Smith's Hearth",
+                    Postcode = "OX217ME",
+                    County = Counties.Oxfordshire
+                },
+                new Address
+                {
+                    AddressID = 9,
+                    House = "26",
+                    StreetName = "Brunel Avenue",
+                    TownName = "Gospel Oak",
+                    Postcode = "NW42AQ",
+                    County = Counties.London
+                },
+                new Address
+                {
+                    AddressID = 10,
+                    House = "14",
+                    StreetName = "Roses Close",
+                    TownName = "Towton",
+                    Postcode = "AL4 E61",
+                    County = Counties.Bedfordshire
+                }
             };
 
             //context.SaveChanges();
@@ -240,12 +329,37 @@ namespace NomadCars.Migrations
             {
                 new Staff
                 { 
+                    StaffID = 1,
+                    Department = DepartmentOptions.Management,
+                    JobPosition = JobPositionOptions.LocationManager,
+                    Salary = 24000m,
+                    StartDate = new System.DateTime(2017,10, 10)
+                },
+                new Staff
+                {
                     StaffID = 2,
+                    Department = DepartmentOptions.Accounts,
+                    JobPosition = JobPositionOptions.Accountant,
+                    Salary = 28000m,
+                    StartDate = new System.DateTime(2017, 10, 10)
+                },
+                new Staff
+                {
+                    StaffID = 3,
                     Department = DepartmentOptions.Management,
                     JobPosition = JobPositionOptions.SalesManager,
-                    Salary = 24000m,
-                    StartDate = new System.DateTime(2017,10, 10),
+                    Salary = 30000m,
+                    StartDate = new System.DateTime(2017, 10, 10)
+                },
+                new Staff
+                {
+                    StaffID = 4,
+                    Department = DepartmentOptions.Sales,
+                    JobPosition = JobPositionOptions.SalesRepresentative,
+                    Salary = 21000m,
+                    StartDate = new System.DateTime(2017, 10, 10)
                 }
+
             };
 
             StaffList.ForEach(s => context.Staff.AddOrUpdate(p => p.StaffID, s));
@@ -267,7 +381,28 @@ namespace NomadCars.Migrations
         {
             var SpecList = new List<CarSpec>
             {
-
+                new CarSpec
+                {
+                    CarSpecID  = 1,
+                    Make = CarMakes.BMW,
+                    Model = CarModels.BMW_420d,
+                    Petrol = true,
+                    Diesel = false,
+                    Electric = false,
+                    TaxGroup = TaxGroups.D,
+                    BodyType = BodyTypes.Coupe,
+                    DriveTrain = DriveTrains.Rear_Wheel_Drive,
+                    TopSpeed = 180,
+                    Doors = 4,
+                    Range = 300,
+                    EngineSize = EngineSizes.CC_1999,
+                    Length = 4638,
+                    Width = 2017,
+                    Seats = 5,
+                    BHP = 181,
+                    BootCapacity = 5,
+                    MPG = 40
+                }
             };
 
             SpecList.ForEach(c => context.CarSpecs.AddOrUpdate(p => p.CarSpecID, c));
