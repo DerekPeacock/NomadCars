@@ -251,10 +251,63 @@ namespace NomadCars.Migrations
                     House = "43",
                     StreetName = "Potters Way",
                     TownName = "Chesham",
-                    Postcode = "HP236LT",
+                    Postcode = "HP236LV",
                     County = Counties.Buckinghamshire
+                },
+                new Address
+                {
+                    AddressID = 5,
+                    House = "18",
+                    StreetName = "Victory Way",
+                    TownName = "Oxford",
+                    Postcode = "OX181LT",
+                    County = Counties.Oxfordshire
+                },
+                new Address
+                {
+                    AddressID = 6,
+                    House = "Forresters Cottage",
+                    StreetName = "Woodland Road",
+                    TownName = "Cloverfield",
+                    Postcode = "HP38UK",
+                    County = Counties.Hertfordshire
+                },
+                new Address
+                {
+                    AddressID = 7,
+                    House = "11",
+                    StreetName = "Gediminas Road",
+                    TownName = "Camden",
+                    Postcode = "NW35VI",
+                    County = Counties.London
+                },
+                new Address
+                {
+                    AddressID = 8,
+                    House = "Old Station House",
+                    StreetName = "Cane Row",
+                    TownName = "Smith's Hearth",
+                    Postcode = "OX217ME",
+                    County = Counties.Oxfordshire
+                },
+                new Address
+                {
+                    AddressID = 9,
+                    House = "26",
+                    StreetName = "Brunel Avenue",
+                    TownName = "Gospel Oak",
+                    Postcode = "NW42AQ",
+                    County = Counties.London
+                },
+                new Address
+                {
+                    AddressID = 10,
+                    House = "14",
+                    StreetName = "Roses Close",
+                    TownName = "Towton",
+                    Postcode = "AL4 E61",
+                    County = Counties.Bedfordshire
                 }
-
             };
 
             //context.SaveChanges();
@@ -278,7 +331,7 @@ namespace NomadCars.Migrations
                 { 
                     StaffID = 1,
                     Department = DepartmentOptions.Management,
-                    JobPosition = JobPositionOptions.SalesManager,
+                    JobPosition = JobPositionOptions.LocationManager,
                     Salary = 24000m,
                     StartDate = new System.DateTime(2017,10, 10)
                 },
@@ -294,7 +347,7 @@ namespace NomadCars.Migrations
                 {
                     StaffID = 3,
                     Department = DepartmentOptions.Management,
-                    JobPosition = JobPositionOptions.LocationManager,
+                    JobPosition = JobPositionOptions.SalesManager,
                     Salary = 30000m,
                     StartDate = new System.DateTime(2017, 10, 10)
                 },
