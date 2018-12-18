@@ -267,7 +267,28 @@ namespace NomadCars.Migrations
         {
             var SpecList = new List<CarSpec>
             {
-
+                new CarSpec
+                {
+                    CarSpecID  = 1,
+                    Make = CarMakes.BMW,
+                    Model = CarModels.BMW_420d,
+                    Petrol = true,
+                    Diesel = false,
+                    Electric = false,
+                    TaxGroup = TaxGroups.D,
+                    BodyType = BodyTypes.Coupe,
+                    DriveTrain = DriveTrains.Rear_Wheel_Drive,
+                    TopSpeed = 180,
+                    Doors = 4,
+                    Range = 300,
+                    EngineSize = EngineSizes.CC_1999,
+                    Length = 4638,
+                    Width = 2017,
+                    Seats = 5,
+                    BHP = 181,
+                    BootCapacity = 5,
+                    MPG = 40
+                }
             };
 
             SpecList.ForEach(c => context.CarSpecs.AddOrUpdate(p => p.CarSpecID, c));
