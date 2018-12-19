@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Zeeshan
@@ -22,11 +23,11 @@ namespace NomadCars.Models
 
     public enum EngineSizes
     {
-        [Description("2999 cc")]
+        [Display(Name = "2999 cc")]
         CC_2999,
-        [Description("1999 cc")]
+        [Display(Name = "1999 cc")]
         CC_1999,
-        [Description("1499 cc")]
+        [Display(Name = "1499 cc")]
         CC_1499
     }
 
