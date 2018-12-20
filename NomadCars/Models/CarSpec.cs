@@ -18,7 +18,8 @@ namespace NomadCars.Models
         BMW_330d,
         BMW_420d,
         BMW_116d,
-        BMW_X1
+        BMW_X1,
+        BMW_i8,
     }
 
     public enum EngineSizes
@@ -37,16 +38,19 @@ namespace NomadCars.Models
         B,
         C,
         D,
-        E
+        E,
+        F,
+        G,
+        H
     }
 
     public enum DriveTrains
     {
-        [Description("Front Wheel Drive")]
+        [Display("Front Wheel Drive")]
         Front_Wheel_Drive,
-        [Description("Rear Wheel Drive")]
+        [Display("Rear Wheel Drive")]
         Rear_Wheel_Drive,
-        [Description("All Wheel Drive")]
+        [Display("All Wheel Drive")]
         All_Wheel_Drive
     }
 

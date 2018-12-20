@@ -371,7 +371,15 @@ namespace NomadCars.Migrations
         {
             var CarList = new List<Car>
             {
+                new Car
+                {
+                    CarID = 1,
+                    Colour ="",
+                    NumberPlate = "",
+                    VINNo = "",
 
+
+                }
             };
 
             CarList.ForEach(c => context.Cars.AddOrUpdate(p => p.CarID, c));
@@ -401,8 +409,8 @@ namespace NomadCars.Migrations
                     Width = 2017,
                     Seats = 5,
                     BHP = 181,
-                    BootCapacity = 23,
-                    MPG = 40
+                    BootCapacity = 445,
+                    MPG = 47
                 },
                 new CarSpec
                 {
@@ -412,7 +420,7 @@ namespace NomadCars.Migrations
                     Petrol = false,
                     Diesel = true,
                     Electric = false,
-                    TaxGroup = TaxGroups.E,
+                    TaxGroup = TaxGroups.H,
                     BodyType = BodyTypes.Coupe,
                     DriveTrain = DriveTrains.Rear_Wheel_Drive,
                     TopSpeed = 160,
@@ -423,8 +431,8 @@ namespace NomadCars.Migrations
                     Width = 2031,
                     Seats = 5,
                     BHP = 254,
-                    BootCapacity = 10,
-                    MPG = 20
+                    BootCapacity = 495,
+                    MPG = 40
                 },
                 new CarSpec
                 {
@@ -434,19 +442,63 @@ namespace NomadCars.Migrations
                     Petrol = false,
                     Diesel = true,
                     Electric = false,
-                    TaxGroup = TaxGroups.E,
+                    TaxGroup = TaxGroups.C,
                     BodyType = BodyTypes.Coupe,
                     DriveTrain = DriveTrains.Rear_Wheel_Drive,
                     TopSpeed = 140,
                     Doors = 4,
-                    Range = 320,
+                    Range = 310,
                     EngineSize = EngineSizes.CC_1499,
                     Length = 4324,
                     Width = 1765,
                     Seats = 5,
                     BHP = 116,
-                    BootCapacity = 12,
-                    MPG = 66
+                    BootCapacity = 360,
+                    MPG = 52
+                },
+                new CarSpec
+                {
+                    CarSpecID  = 4,
+                    Make = CarMakes.BMW,
+                    Model = CarModels.BMW_X1,
+                    Petrol = false,
+                    Diesel = true,
+                    Electric = false,
+                    TaxGroup = TaxGroups.F,
+                    BodyType = BodyTypes.SUV,
+                    DriveTrain = DriveTrains.All_Wheel_Drive,
+                    TopSpeed = 160,
+                    Doors = 4,
+                    Range = 350,
+                    EngineSize = EngineSizes.CC_1999,
+                    Length = 4439,
+                    Width = 1821,
+                    Seats = 5,
+                    BHP = 150,
+                    BootCapacity = 505,
+                    MPG = 60
+                },
+                new CarSpec
+                {
+                    CarSpecID  = 5,
+                    Make = CarMakes.BMW,
+                    Model = CarModels.BMW_i8,
+                    Petrol = true,
+                    Diesel = false,
+                    Electric = true,
+                    TaxGroup = TaxGroups.B,
+                    BodyType = BodyTypes.Coupe,
+                    DriveTrain = DriveTrains.All_Wheel_Drive,
+                    TopSpeed = 160,
+                    Doors = 2,
+                    Range = 300,
+                    EngineSize = EngineSizes.CC_1499,
+                    Length = 4689,
+                    Width = 1942,
+                    Seats = 2,
+                    BHP = 370,
+                    BootCapacity = 154,
+                    MPG = 30
                 }
             };
 
