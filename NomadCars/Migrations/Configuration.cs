@@ -188,14 +188,14 @@ namespace NomadCars.Migrations
                     IsReturned = false,
                     Refund = 0.00m,
                     IntrestRate = 3.00m,
-                    TransactionType = TransactionTypes.CARD,
+                    TransactionType = TransactionTypes.Card,
                     CarID = 1,
                     PersonID = 1,
                     StaffID = 1
                 }
             };
-
-            //context.SaveChanges();
+            PurchaseList.ForEach(p => context.Purchases.AddOrUpdate(i => i.PurchaseID, p));
+           context.SaveChanges();
         }
 
         // Connor
