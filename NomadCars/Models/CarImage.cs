@@ -7,12 +7,30 @@ using System.ComponentModel.DataAnnotations;
 /// </summary>
 namespace NomadCars.Models
 {
-    public enum ImageTypes
+    public enum ImageFormats
     {
-        CAR_FRONT,
-        CAR_BACK,
-        CAR_INTERIOR
+        img,
+        jpg,
+        png
     }
+
+    public enum ImagePositions
+    {
+        [Display(Name ="Car Front")]
+        CAR_FRONT,
+        [Display(Name = "Car Back")]
+        CAR_BACK,
+        [Display(Name = "Car Interior")]
+        CAR_INTERIOR,
+        [Display(Name = "Car Side")]
+        CAR_SIDE,
+        [Display(Name = "Car Accessory")]
+        CAR_ACCESSORY
+    }
+
+    /// <summary>
+    /// Daniel
+    /// </summary>
 
     public class CarImage
     {
@@ -23,18 +41,17 @@ namespace NomadCars.Models
         public int CarImageID { get; set; }
 
         /// <summary>
-        /// The URL of the image being used on 
-        /// our website.
+        /// The URL of the image being used on our website.
         /// </summary>
         [Required, StringLength(255), DataType(DataType.ImageUrl)]
-        public string ImageURL;
+        public string ImageURL { get; set; }
 
         /// <summary>
         /// A short description of what is being 
         /// displayed in the image.
         /// </summary>
-        [Required, StringLength(255), Display(Name = "Description")]
-        public string Description;
+        [Required, StringLength(255)]
+        public string Description { get; set; }
 
         /// <summary>
         /// A message that will appear alongside 
@@ -42,17 +59,21 @@ namespace NomadCars.Models
         /// of the image's contents.
         /// </summary>
         [Required, StringLength(50)]
-        public string Caption;
+        public string Caption { get; set; }
 
         /// <summary>
         /// Refers to the positioning of the car 
         /// from where the photo was taken, e.g. 
         /// front, back or interior.
         /// </summary>
-        [Required, StringLength(20)]
-        public string ImageType;
+        public ImageFormats ImageFormat { get; set; }
 
-        public ICollection<Car> car;
+        public ImagePositions Position { get; set; }
+
+        // FK
+        public int CarID { get; set; }
+
+        public virtual Car Car { get; set; }
 
     }
 }
