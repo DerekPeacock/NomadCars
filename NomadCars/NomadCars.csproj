@@ -193,9 +193,17 @@
     <Compile Include="Migrations\201812201334215_UpdatedCar.Designer.cs">
       <DependentUpon>201812201334215_UpdatedCar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812201435029_EnumConvention.cs" />
-    <Compile Include="Migrations\201812201435029_EnumConvention.Designer.cs">
-      <DependentUpon>201812201435029_EnumConvention.cs</DependentUpon>
+    <Compile Include="Migrations\201812201400252_UpdateCarImage.cs" />
+    <Compile Include="Migrations\201812201400252_UpdateCarImage.Designer.cs">
+      <DependentUpon>201812201400252_UpdateCarImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812201418284_UpdateAccessory.cs" />
+    <Compile Include="Migrations\201812201418284_UpdateAccessory.Designer.cs">
+      <DependentUpon>201812201418284_UpdateAccessory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812201440381_UpdatePaymentCard.cs" />
+    <Compile Include="Migrations\201812201440381_UpdatePaymentCard.Designer.cs">
+      <DependentUpon>201812201440381_UpdatePaymentCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
@@ -222,9 +230,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\BMW118D.jpg" />
+    <Content Include="Images\BMW116D.jpg" />
     <Content Include="Images\BMW330D.jpg" />
     <Content Include="Images\BMW420D.jpg" />
+    <Content Include="Images\BMWI8.jpg" />
     <Content Include="Images\BMWX1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -327,8 +336,14 @@
     <EmbeddedResource Include="Migrations\201812201334215_UpdatedCar.resx">
       <DependentUpon>201812201334215_UpdatedCar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812201435029_EnumConvention.resx">
-      <DependentUpon>201812201435029_EnumConvention.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812201400252_UpdateCarImage.resx">
+      <DependentUpon>201812201400252_UpdateCarImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201418284_UpdateAccessory.resx">
+      <DependentUpon>201812201418284_UpdateAccessory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201440381_UpdatePaymentCard.resx">
+      <DependentUpon>201812201440381_UpdatePaymentCard.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
