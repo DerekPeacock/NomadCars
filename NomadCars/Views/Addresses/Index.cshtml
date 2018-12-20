@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<NomadCars.Models.Address>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Addresses";
 }
 
-<h2>Index</h2>
+<h2>Address of Staff and Customers</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Address", "Create", null, new { @class = "btn btn-primary btn-large" })
 </p>
 <table class="table">
     <tr>

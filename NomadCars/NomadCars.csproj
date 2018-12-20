@@ -201,6 +201,14 @@
     <Compile Include="Migrations\201812201418284_UpdateAccessory.Designer.cs">
       <DependentUpon>201812201418284_UpdateAccessory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812201440381_UpdatePaymentCard.cs" />
+    <Compile Include="Migrations\201812201440381_UpdatePaymentCard.Designer.cs">
+      <DependentUpon>201812201440381_UpdatePaymentCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812201452493_AddPaymentCardID.cs" />
+    <Compile Include="Migrations\201812201452493_AddPaymentCardID.Designer.cs">
+      <DependentUpon>201812201452493_AddPaymentCardID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -226,9 +234,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\BMW118D.jpg" />
+    <Content Include="Images\BMW116D.jpg" />
     <Content Include="Images\BMW330D.jpg" />
     <Content Include="Images\BMW420D.jpg" />
+    <Content Include="Images\BMWI8.jpg" />
     <Content Include="Images\BMWX1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -336,6 +345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812201418284_UpdateAccessory.resx">
       <DependentUpon>201812201418284_UpdateAccessory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201440381_UpdatePaymentCard.resx">
+      <DependentUpon>201812201440381_UpdatePaymentCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201452493_AddPaymentCardID.resx">
+      <DependentUpon>201812201452493_AddPaymentCardID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
