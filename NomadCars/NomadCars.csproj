@@ -205,6 +205,10 @@
     <Compile Include="Migrations\201812201440381_UpdatePaymentCard.Designer.cs">
       <DependentUpon>201812201440381_UpdatePaymentCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812201452493_AddPaymentCardID.cs" />
+    <Compile Include="Migrations\201812201452493_AddPaymentCardID.Designer.cs">
+      <DependentUpon>201812201452493_AddPaymentCardID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -344,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812201440381_UpdatePaymentCard.resx">
       <DependentUpon>201812201440381_UpdatePaymentCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201452493_AddPaymentCardID.resx">
+      <DependentUpon>201812201452493_AddPaymentCardID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

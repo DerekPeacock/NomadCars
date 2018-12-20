@@ -22,6 +22,8 @@ namespace NomadCars.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
+            SeedPaymentCard(context);
+
             // William
             SeedPeople(context);
 
@@ -42,8 +44,7 @@ namespace NomadCars.Migrations
 
             // Daniel
             //SeedImages(context);
-            // Connor
-            //SeedPaymentCard(context);
+            
             // Connor
             //SeedPurchases(context);
         }
@@ -62,8 +63,9 @@ namespace NomadCars.Migrations
                     Email = "william.foster@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = MaritalSatusOptions.SINGLE
-                },
+                    MaritalStatus = MaritalSatusOptions.SINGLE,
+                    PaymentCardID = 1
+                }, 
                 new Person
                 {
                     PersonID = 2,
@@ -201,10 +203,20 @@ namespace NomadCars.Migrations
         {
             var PaymentCardList = new List<PaymentCard>
             {
-
+                new PaymentCard
+                {
+                    PaymentCardID = 1,
+                    NameOnCard = "William Foster",
+                    CardNumber = "1234 1234 1234 1234",
+                    CardType = CardTypes.VISA_DEBIT,
+                    ExpiryMonth = 8,
+                    ExpiryYear = 2021,
+                    SecurityNumber = "123"
+                }
             };
 
-            //context.SaveChanges();
+            PaymentCardList.ForEach(p => context.PaymentCards.AddOrUpdate(i => i.PaymentCardID, p));
+            context.SaveChanges();
         }
 
         // Daniel
