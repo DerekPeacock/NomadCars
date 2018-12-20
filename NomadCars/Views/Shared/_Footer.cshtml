@@ -1,4 +1,26 @@
 ﻿<hr />
 <footer>
-    <p>&copy; @DateTime.Now.Year - Nomad Cars</p>
+    <div class="row">
+
+        <div class="col-xs-4">
+            <p>&copy; @DateTime.Now.Year - Nomad Cars</p>
+        </div>
+
+        <div class="col-xs-4">
+            <ul>
+                <h4> <u>Opening Hours</u> </h4>
+                <span class="border-primary">
+                    <li>Monday - Friday : 9am - 6pm</li>
+                    <li>Saturday : 9am - 7pm</li>
+                    <li>Sunday : 10am - 4pm</li>
+                </span>
+            </ul>
+        </div>
+
+        <div class="col-xs-4">
+            <p> @Html.ActionLink("Home  |", "Index", "Home") @Html.ActionLink(" Used Cars |", " UsedCars ", "Home") @Html.ActionLink(" Contact Us |", " Contact ", "Home") </p>
+        </div>
+
+    </div>
+    <hr />
 </footer>

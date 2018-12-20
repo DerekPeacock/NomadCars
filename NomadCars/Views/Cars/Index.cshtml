@@ -1,0 +1,93 @@
+﻿@model IEnumerable<NomadCars.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarSpec.CarSpecID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Colour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberPlate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VINNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mileage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransmissionType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoPreviousOwner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccelerationTo60)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Delivered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CO2Emissions)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarSpec.CarSpecID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Colour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberPlate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VINNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mileage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransmissionType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoPreviousOwner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccelerationTo60)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Delivered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CO2Emissions)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CarID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CarID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CarID })
+        </td>
+    </tr>
+}
+
+</table>

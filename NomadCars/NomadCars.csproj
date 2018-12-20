@@ -175,6 +175,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddressesController.cs" />
+    <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\CarSpecsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -191,6 +192,14 @@
     <Compile Include="Migrations\201812201334215_UpdatedCar.cs" />
     <Compile Include="Migrations\201812201334215_UpdatedCar.Designer.cs">
       <DependentUpon>201812201334215_UpdatedCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812201400252_UpdateCarImage.cs" />
+    <Compile Include="Migrations\201812201400252_UpdateCarImage.Designer.cs">
+      <DependentUpon>201812201400252_UpdateCarImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812201418284_UpdateAccessory.cs" />
+    <Compile Include="Migrations\201812201418284_UpdateAccessory.Designer.cs">
+      <DependentUpon>201812201418284_UpdateAccessory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
@@ -217,9 +226,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\BMW118D.jpg" />
+    <Content Include="Images\BMW116D.jpg" />
     <Content Include="Images\BMW330D.jpg" />
     <Content Include="Images\BMW420D.jpg" />
+    <Content Include="Images\BMWI8.jpg" />
     <Content Include="Images\BMWX1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -293,6 +303,11 @@
     <Content Include="Views\CarSpecs\Edit.cshtml" />
     <Content Include="Views\CarSpecs\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Cars\Create.cshtml" />
+    <Content Include="Views\Cars\Delete.cshtml" />
+    <Content Include="Views\Cars\Details.cshtml" />
+    <Content Include="Views\Cars\Edit.cshtml" />
+    <Content Include="Views\Cars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,6 +331,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812201334215_UpdatedCar.resx">
       <DependentUpon>201812201334215_UpdatedCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201400252_UpdateCarImage.resx">
+      <DependentUpon>201812201400252_UpdateCarImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201418284_UpdateAccessory.resx">
+      <DependentUpon>201812201418284_UpdateAccessory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
