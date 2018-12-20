@@ -193,6 +193,10 @@
     <Compile Include="Migrations\201812201334215_UpdatedCar.Designer.cs">
       <DependentUpon>201812201334215_UpdatedCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812201435029_EnumConvention.cs" />
+    <Compile Include="Migrations\201812201435029_EnumConvention.Designer.cs">
+      <DependentUpon>201812201435029_EnumConvention.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -322,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812201334215_UpdatedCar.resx">
       <DependentUpon>201812201334215_UpdatedCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201435029_EnumConvention.resx">
+      <DependentUpon>201812201435029_EnumConvention.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

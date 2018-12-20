@@ -6,12 +6,18 @@ namespace NomadCars.Models
 {
     public enum Counties
     {
-        Buckinghamshire,
-        Bedfordshire,
-        Hertfordshire,
-        London,
-        Northamtonshire,
-        Oxfordshire
+        [Display(Name ="Buckinghamshire")]
+        BUCKINGHAMSHIRE,
+        [Display(Name = "Bedfordshire")]
+        BEDFORDSHIRE,
+        [Display(Name = "Hertfordshire")]
+        HERTFORDSHIRE,
+        [Display(Name = "London")]
+        LONDON,
+        [Display(Name = "Northamtonshire")]
+        NORTHAMTONSHIRE,
+        [Display(Name = "Oxfordshire")]
+        OXFORDSHIRE
     }
 
     /// <summary>

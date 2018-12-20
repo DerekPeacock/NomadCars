@@ -10,17 +10,24 @@ namespace NomadCars.Models
     /// </summary>
     public enum DepartmentOptions
     {
-        Sales,
-        Management,
-        Accounts,
+        [Display(Name ="Sales")]
+        SALES,
+        [Display(Name ="Management")]
+        MANAGEMENT,
+        [Display(Name ="Accounts")]
+        ACCOUNTS
     }
 
     public enum JobPositionOptions
     {
-        SalesRepresentative,
-        SalesManager,
-        LocationManager,
-        Accountant
+        [Display(Name ="Sales Representative")]
+        SALES_REPRESENTATIVE,
+        [Display(Name ="Sales Manager")]
+        SALES_MANAGER,
+        [Display(Name ="Location Manager")]
+        LOCATION_MANAGER,
+        [Display(Name ="Accountant")]
+        ACCOUNTANT
     }
 
     public class Staff

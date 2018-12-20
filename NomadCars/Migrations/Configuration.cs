@@ -60,7 +60,7 @@ namespace NomadCars.Migrations
                     Email = "william.foster@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = MaritalSatusOptions.Single
+                    MaritalStatus = MaritalSatusOptions.SINGLE
                 },
                 new Person
                 {
@@ -71,7 +71,7 @@ namespace NomadCars.Migrations
                     Email = "connor.patey@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = MaritalSatusOptions.Single
+                    MaritalStatus = MaritalSatusOptions.SINGLE
                 },
                 new Person
                 {
@@ -82,7 +82,7 @@ namespace NomadCars.Migrations
                     Email = "daniel.schafer_smith@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = MaritalSatusOptions.Single
+                    MaritalStatus = MaritalSatusOptions.SINGLE
                 },
                 new Person
                 {
@@ -93,7 +93,7 @@ namespace NomadCars.Migrations
                     Email = "zeeshan.akhlaq@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = MaritalSatusOptions.Single
+                    MaritalStatus = MaritalSatusOptions.SINGLE
                 },
                 new Person
                 {
@@ -104,7 +104,7 @@ namespace NomadCars.Migrations
                     Email = "TomasGreen94@gmail.com",
                     IsCustomer = true,
                     IsStaff = false,
-                    MaritalStatus = MaritalSatusOptions.Single
+                    MaritalStatus = MaritalSatusOptions.SINGLE
                 },
                 new Person
                 {
@@ -115,7 +115,7 @@ namespace NomadCars.Migrations
                     Email = "Miller92@gmail.com",
                     IsCustomer = true,
                     IsStaff = false,
-                    MaritalStatus = MaritalSatusOptions.Single
+                    MaritalStatus = MaritalSatusOptions.SINGLE
                 },
                 new Person
                 {
@@ -126,7 +126,7 @@ namespace NomadCars.Migrations
                     Email = "Lilly1985@gmail.com",
                     IsCustomer = true,
                     IsStaff = false,
-                    MaritalStatus = MaritalSatusOptions.Married
+                    MaritalStatus = MaritalSatusOptions.MARRIED
                 },
                 new Person
                 {
@@ -137,7 +137,7 @@ namespace NomadCars.Migrations
                     Email = "JoshKnight90@gmail.com",
                     IsCustomer = true,
                     IsStaff = false,
-                    MaritalStatus = MaritalSatusOptions.Married
+                    MaritalStatus = MaritalSatusOptions.MARRIED
                 },
                 new Person
                 {
@@ -148,7 +148,7 @@ namespace NomadCars.Migrations
                     Email = "EWhite@gmail.com",
                     IsCustomer = true,
                     IsStaff = false,
-                    MaritalStatus = MaritalSatusOptions.Divorced
+                    MaritalStatus = MaritalSatusOptions.DIVORCED
                 },
                 new Person
                 {
@@ -159,7 +159,7 @@ namespace NomadCars.Migrations
                     Email = "EliotMey@gmail.com",
                     IsCustomer = true,
                     IsStaff = false,
-                    MaritalStatus = MaritalSatusOptions.Other
+                    MaritalStatus = MaritalSatusOptions.OTHER
                 }
 
             };
@@ -225,7 +225,7 @@ namespace NomadCars.Migrations
                     StreetName = "Kestrel Way",
                     TownName = "Aylesbury",
                     Postcode = "HP190GH",
-                    County = Counties.Buckinghamshire
+                    County = Counties.BUCKINGHAMSHIRE
                 },
                 new Address
                 {
@@ -234,7 +234,7 @@ namespace NomadCars.Migrations
                     StreetName = "Iron Road",
                     TownName = "Aylesbury",
                     Postcode = "HP208UG",
-                    County = Counties.Buckinghamshire
+                    County = Counties.BUCKINGHAMSHIRE
                 },
                 new Address
                 {
@@ -243,7 +243,7 @@ namespace NomadCars.Migrations
                     StreetName = "Mercia Close",
                     TownName = "Aylesbury",
                     Postcode = "HP214OF",
-                    County = Counties.Buckinghamshire
+                    County = Counties.BUCKINGHAMSHIRE
                 },
                 new Address
                 {
@@ -252,7 +252,7 @@ namespace NomadCars.Migrations
                     StreetName = "Potters Way",
                     TownName = "Chesham",
                     Postcode = "HP236LV",
-                    County = Counties.Buckinghamshire
+                    County = Counties.BUCKINGHAMSHIRE
                 },
                 new Address
                 {
@@ -261,7 +261,7 @@ namespace NomadCars.Migrations
                     StreetName = "Victory Way",
                     TownName = "Oxford",
                     Postcode = "OX181LT",
-                    County = Counties.Oxfordshire
+                    County = Counties.OXFORDSHIRE
                 },
                 new Address
                 {
@@ -270,7 +270,7 @@ namespace NomadCars.Migrations
                     StreetName = "Woodland Road",
                     TownName = "Cloverfield",
                     Postcode = "HP38UK",
-                    County = Counties.Hertfordshire
+                    County = Counties.HERTFORDSHIRE
                 },
                 new Address
                 {
@@ -279,7 +279,7 @@ namespace NomadCars.Migrations
                     StreetName = "Gediminas Road",
                     TownName = "Camden",
                     Postcode = "NW35VI",
-                    County = Counties.London
+                    County = Counties.LONDON
                 },
                 new Address
                 {
@@ -288,7 +288,7 @@ namespace NomadCars.Migrations
                     StreetName = "Cane Row",
                     TownName = "Smith's Hearth",
                     Postcode = "OX217ME",
-                    County = Counties.Oxfordshire
+                    County = Counties.OXFORDSHIRE
                 },
                 new Address
                 {
@@ -297,7 +297,7 @@ namespace NomadCars.Migrations
                     StreetName = "Brunel Avenue",
                     TownName = "Gospel Oak",
                     Postcode = "NW42AQ",
-                    County = Counties.London
+                    County = Counties.LONDON
                 },
                 new Address
                 {
@@ -306,7 +306,7 @@ namespace NomadCars.Migrations
                     StreetName = "Roses Close",
                     TownName = "Towton",
                     Postcode = "AL4 E61",
-                    County = Counties.Bedfordshire
+                    County = Counties.BEDFORDSHIRE
                 }
             };
 
@@ -331,32 +331,32 @@ namespace NomadCars.Migrations
                 new Staff
                 { 
                     StaffID = 1,
-                    Department = DepartmentOptions.Management,
-                    JobPosition = JobPositionOptions.LocationManager,
+                    Department = DepartmentOptions.MANAGEMENT,
+                    JobPosition = JobPositionOptions.LOCATION_MANAGER,
                     Salary = 24000m,
                     StartDate = new System.DateTime(2017,10, 10)
                 },
                 new Staff
                 {
                     StaffID = 2,
-                    Department = DepartmentOptions.Accounts,
-                    JobPosition = JobPositionOptions.Accountant,
+                    Department = DepartmentOptions.ACCOUNTS,
+                    JobPosition = JobPositionOptions.ACCOUNTANT,
                     Salary = 28000m,
                     StartDate = new System.DateTime(2017, 10, 10)
                 },
                 new Staff
                 {
                     StaffID = 3,
-                    Department = DepartmentOptions.Management,
-                    JobPosition = JobPositionOptions.SalesManager,
+                    Department = DepartmentOptions.MANAGEMENT,
+                    JobPosition = JobPositionOptions.SALES_MANAGER,
                     Salary = 30000m,
                     StartDate = new System.DateTime(2017, 10, 10)
                 },
                 new Staff
                 {
                     StaffID = 4,
-                    Department = DepartmentOptions.Sales,
-                    JobPosition = JobPositionOptions.SalesRepresentative,
+                    Department = DepartmentOptions.SALES,
+                    JobPosition = JobPositionOptions.SALES_REPRESENTATIVE,
                     Salary = 21000m,
                     StartDate = new System.DateTime(2017, 10, 10)
                 }

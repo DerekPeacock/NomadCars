@@ -6,10 +6,14 @@ namespace NomadCars.Models
 {
     public enum MaritalSatusOptions
     {
-        Single,
-        Married,
-        Divorced,
-        Other
+        [Display(Name ="Single")]
+        SINGLE,
+        [Display(Name ="Married")]
+        MARRIED,
+        [Display(Name ="Divorced")]
+        DIVORCED,
+        [Display(Name ="Other")]
+        OTHER
     }
 
     /// <summary>
