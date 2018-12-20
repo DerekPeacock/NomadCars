@@ -337,8 +337,58 @@ namespace NomadCars.Migrations
                 {
                     AccessoryID = 1,
                     AccessoryType = AccessoryTypes.BlueTooth,
-                    Description = "Blue Tooth"
+                    Description = "Blutooth audio capabilities"
+                },
+                new Accessory
+                {
+                    AccessoryID = 2,
+                    AccessoryType = AccessoryTypes.BlindSpotMonitor,
+                    Description = "Allows the driver to see blind spots via the use of a monitor"
+                },
+                new Accessory
+                {
+                    AccessoryID = 3,
+                    AccessoryType = AccessoryTypes.DashCam,
+                    Description = "Allows the driver to record footage of the front of the car"
+                },
+                new Accessory
+                {
+                    AccessoryID = 4,
+                    AccessoryType = AccessoryTypes.FrontCamera,
+                    Description = "A camera that allows the user to percieve the front of the car from alternative angles"
+                },
+                new Accessory
+                {
+                    AccessoryID = 5,
+                    AccessoryType = AccessoryTypes.HeatedSeats,
+                    Description = "Seat or seats with the ability to heat up and warm either the driver and/or passengers seat"
+                },
+                new Accessory
+                {
+                    AccessoryID = 6,
+                    AccessoryType = AccessoryTypes.ParkingSensor,
+                    Description = "A sensor which will indicate if the car is likely to collide with anything"
+                },
+                new Accessory
+                {
+                    AccessoryID = 7,
+                    AccessoryType = AccessoryTypes.Radio,
+                    Description = "A radio with FM and/or AM audio capabilities"
+                },
+                new Accessory
+                {
+                    AccessoryID = 8,
+                    AccessoryType = AccessoryTypes.ReverseCamera,
+                    Description = "A camera that allows the user to percieve the back of the car from alternative angles"
+                },
+                new Accessory
+                {
+                    AccessoryID = 9,
+                    AccessoryType = AccessoryTypes.SatNav,
+                    Description = "A piece of integrated hardware which provides directions to a chosen destination"
                 }
+
+
             };
 
             AccessoryList.ForEach(s => context.Accessories.AddOrUpdate(p => p.AccessoryID, s));
