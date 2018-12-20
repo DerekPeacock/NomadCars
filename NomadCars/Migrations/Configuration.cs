@@ -38,7 +38,8 @@ namespace NomadCars.Migrations
             SeedCars(context);
 
             // Daniel
-            //SeeAccessory(context);
+            SeedAccessory(context);
+
             // Daniel
             //SeedImages(context);
             // Connor
@@ -328,14 +329,20 @@ namespace NomadCars.Migrations
             context.SaveChanges();
         }
 
-        private void SeeAccessory(NomadDbContext context)
+        private void SeedAccessory(NomadDbContext context)
         {
             var AccessoryList = new List<Accessory>
             {
-
+                new Accessory
+                {
+                    AccessoryID = 1,
+                    AccessoryType = AccessoryTypes.BlueTooth,
+                    Description = "Blue Tooth"
+                }
             };
 
-            //context.SaveChanges();
+            AccessoryList.ForEach(s => context.Accessories.AddOrUpdate(p => p.AccessoryID, s));
+            context.SaveChanges();
         }
 
         private void SeedStaff(NomadDbContext context)

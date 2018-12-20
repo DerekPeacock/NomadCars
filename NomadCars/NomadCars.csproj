@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201812201400252_UpdateCarImage.Designer.cs">
       <DependentUpon>201812201400252_UpdateCarImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812201418284_UpdateAccessory.cs" />
+    <Compile Include="Migrations\201812201418284_UpdateAccessory.Designer.cs">
+      <DependentUpon>201812201418284_UpdateAccessory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -329,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812201400252_UpdateCarImage.resx">
       <DependentUpon>201812201400252_UpdateCarImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812201418284_UpdateAccessory.resx">
+      <DependentUpon>201812201418284_UpdateAccessory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
