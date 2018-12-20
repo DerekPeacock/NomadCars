@@ -217,9 +217,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\BMW118D.jpg" />
+    <Content Include="Images\BMW116D.jpg" />
     <Content Include="Images\BMW330D.jpg" />
     <Content Include="Images\BMW420D.jpg" />
+    <Content Include="Images\BMWI8.jpg" />
     <Content Include="Images\BMWX1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
