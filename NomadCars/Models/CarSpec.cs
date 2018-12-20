@@ -46,11 +46,11 @@ namespace NomadCars.Models
 
     public enum DriveTrains
     {
-        [Display("Front Wheel Drive")]
+        [Display(Name = "Front Wheel Drive")]
         Front_Wheel_Drive,
-        [Display("Rear Wheel Drive")]
+        [Display(Name = "Rear Wheel Drive")]
         Rear_Wheel_Drive,
-        [Display("All Wheel Drive")]
+        [Display(Name = "All Wheel Drive")]
         All_Wheel_Drive
     }
 

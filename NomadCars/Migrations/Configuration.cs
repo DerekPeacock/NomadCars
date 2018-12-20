@@ -395,12 +395,84 @@ namespace NomadCars.Migrations
                 new Car
                 {
                     CarID = 1,
-                    Colour ="",
-                    NumberPlate = "",
-                    VINNo = "",
+                    CarSpecID = 1,
+                    Colour ="White",
+                    NumberPlate = "YD17 UVV",
+                    VINNo = "2BCHV8110HB571011",
+                    Mileage = 467,
+                    TransmissionType = TransmissionTypes.Automatic,
+                    NoPreviousOwner = 3,
+                    AccelerationTo60 = 6,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 139
 
+                },
+                new Car
+                {
+                    CarID = 2,
+                    CarSpecID = 2,
+                    Colour ="Grey",
+                    NumberPlate = "VO13 LUW",
+                    VINNo = "LM4AC11C331171079",
+                    Mileage = 40648,
+                    TransmissionType = TransmissionTypes.Manual,
+                    NoPreviousOwner = 1,
+                    AccelerationTo60 = 5,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 178
+
+                },
+                new Car
+                {
+                    CarID = 3,
+                    CarSpecID = 3,
+                    Colour ="Metallic Silver",
+                    NumberPlate = "YH14 DDK",
+                    VINNo = "5VCACRKF6BH210126",
+                    Mileage = 29180,
+                    TransmissionType = TransmissionTypes.Manual,
+                    NoPreviousOwner = 5,
+                    AccelerationTo60 = 9,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 103
+
+                },
+                new Car
+                {
+                    CarID = 4,
+                    CarSpecID = 4,
+                    Colour ="Graphite",
+                    NumberPlate = "YJ67 YTA",
+                    VINNo = "1P3BB26P0JW194241",
+                    Mileage = 4927,
+                    TransmissionType = TransmissionTypes.Automatic,
+                    NoPreviousOwner = 2,
+                    AccelerationTo60 = 6,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 170
+
+                },
+                new Car
+                {
+                    CarID = 5,
+                    CarSpecID = 5,
+                    Colour ="Metallic Grey",
+                    NumberPlate = "YA18 OPP",
+                    VINNo = "JM1BK34F391147858",
+                    Mileage = 259,
+                    TransmissionType = TransmissionTypes.Automatic,
+                    NoPreviousOwner = 1,
+                    AccelerationTo60 = 4,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 49
 
                 }
+
             };
 
             CarList.ForEach(c => context.Cars.AddOrUpdate(p => p.CarID, c));
