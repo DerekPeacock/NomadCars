@@ -6,10 +6,14 @@ namespace NomadCars.Models
 {
     public enum MaritalSatusOptions
     {
-        Single,
-        Married,
-        Divorced,
-        Other
+        [Display(Name ="Single")]
+        SINGLE,
+        [Display(Name ="Married")]
+        MARRIED,
+        [Display(Name ="Divorced")]
+        DIVORCED,
+        [Display(Name ="Other")]
+        OTHER
     }
 
     /// <summary>
@@ -84,6 +88,8 @@ namespace NomadCars.Models
         public virtual Address Address { get; set; }
 
         public Staff Staff { get; set; }
+
+        public Nullable<int> PaymentCardID { get; set; }
 
         public ICollection<Purchase> PurchaseList;
 
