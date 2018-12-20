@@ -47,6 +47,7 @@ namespace NomadCars.Migrations
             //SeedPurchases(context);
         }
 
+        // William
         private void SeedPeople(NomadDbContext context)
         {
             var PeopleList = new List<Person>
@@ -194,6 +195,7 @@ namespace NomadCars.Migrations
             //context.SaveChanges();
         }
 
+        // Connor
         private void SeedPaymentCard(NomadDbContext context)
         {
             var PaymentCardList = new List<PaymentCard>
@@ -204,14 +206,26 @@ namespace NomadCars.Migrations
             //context.SaveChanges();
         }
 
+        // Daniel
         private void SeedImages(NomadDbContext context)
         {
             var CarImageList = new List<CarImage>
             {
+                new CarImage
+                {
+                    CarImageID = 1,
+                    Caption = "BMW330D",
+                    Description = "BMW330D Description",
+                    ImageFormat = ImageFormats.jpg,
+                    CarID = 2,
+                    ImageURL = "~/Images/BMW330D.jpg",
+                    Position = ImagePositions.CAR_FRONT
+                }
 
             };
 
-            //context.SaveChanges();
+            CarImageList.ForEach(s => context.CarImages.AddOrUpdate(p => p.CarImageID, s));
+            context.SaveChanges();
         }
 
         private void SeedAddresses(NomadDbContext context)
