@@ -22,6 +22,8 @@ namespace NomadCars.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
+            SeedPaymentCard(context);
+
             // William
             SeedPeople(context);
 
@@ -42,8 +44,7 @@ namespace NomadCars.Migrations
 
             // Daniel
             //SeedImages(context);
-            // Connor
-            //SeedPaymentCard(context);
+            
             // Connor
             //SeedPurchases(context);
         }
@@ -64,8 +65,9 @@ namespace NomadCars.Migrations
                     Email = "william.foster@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = MaritalSatusOptions.SINGLE
-                },
+                    MaritalStatus = MaritalSatusOptions.SINGLE,
+                    PaymentCardID = 1
+                }, 
                 new Person
                 {
                     PersonID = 2,
@@ -206,14 +208,14 @@ namespace NomadCars.Migrations
                     IsReturned = false,
                     Refund = 0.00m,
                     IntrestRate = 3.00m,
-                    TransactionType = TransactionTypes.CARD,
+                    TransactionType = TransactionTypes.Card,
                     CarID = 1,
                     PersonID = 1,
                     StaffID = 1
                 }
             };
-
-            //context.SaveChanges();
+            PurchaseList.ForEach(p => context.Purchases.AddOrUpdate(i => i.PurchaseID, p));
+           context.SaveChanges();
         }
 
         // Connor
@@ -221,10 +223,20 @@ namespace NomadCars.Migrations
         {
             var PaymentCardList = new List<PaymentCard>
             {
-
+                new PaymentCard
+                {
+                    PaymentCardID = 1,
+                    NameOnCard = "William Foster",
+                    CardNumber = "1234 1234 1234 1234",
+                    CardType = CardTypes.VISA_DEBIT,
+                    ExpiryMonth = 8,
+                    ExpiryYear = 2021,
+                    SecurityNumber = "123"
+                }
             };
 
-            //context.SaveChanges();
+            PaymentCardList.ForEach(p => context.PaymentCards.AddOrUpdate(i => i.PaymentCardID, p));
+            context.SaveChanges();
         }
 
         // Daniel
@@ -357,8 +369,58 @@ namespace NomadCars.Migrations
                 {
                     AccessoryID = 1,
                     AccessoryType = AccessoryTypes.BlueTooth,
-                    Description = "Blue Tooth"
+                    Description = "Blutooth audio capabilities"
+                },
+                new Accessory
+                {
+                    AccessoryID = 2,
+                    AccessoryType = AccessoryTypes.BlindSpotMonitor,
+                    Description = "Allows the driver to see blind spots via the use of a monitor"
+                },
+                new Accessory
+                {
+                    AccessoryID = 3,
+                    AccessoryType = AccessoryTypes.DashCam,
+                    Description = "Allows the driver to record footage of the front of the car"
+                },
+                new Accessory
+                {
+                    AccessoryID = 4,
+                    AccessoryType = AccessoryTypes.FrontCamera,
+                    Description = "A camera that allows the user to percieve the front of the car from alternative angles"
+                },
+                new Accessory
+                {
+                    AccessoryID = 5,
+                    AccessoryType = AccessoryTypes.HeatedSeats,
+                    Description = "Seat or seats with the ability to heat up and warm either the driver and/or passengers seat"
+                },
+                new Accessory
+                {
+                    AccessoryID = 6,
+                    AccessoryType = AccessoryTypes.ParkingSensor,
+                    Description = "A sensor which will indicate if the car is likely to collide with anything"
+                },
+                new Accessory
+                {
+                    AccessoryID = 7,
+                    AccessoryType = AccessoryTypes.Radio,
+                    Description = "A radio with FM and/or AM audio capabilities"
+                },
+                new Accessory
+                {
+                    AccessoryID = 8,
+                    AccessoryType = AccessoryTypes.ReverseCamera,
+                    Description = "A camera that allows the user to percieve the back of the car from alternative angles"
+                },
+                new Accessory
+                {
+                    AccessoryID = 9,
+                    AccessoryType = AccessoryTypes.SatNav,
+                    Description = "A piece of integrated hardware which provides directions to a chosen destination"
                 }
+
+
             };
 
             AccessoryList.ForEach(s => context.Accessories.AddOrUpdate(p => p.AccessoryID, s));
@@ -412,6 +474,86 @@ namespace NomadCars.Migrations
         {
             var CarList = new List<Car>
             {
+                new Car
+                {
+                    CarID = 1,
+                    CarSpecID = 1,
+                    Colour ="White",
+                    NumberPlate = "YD17 UVV",
+                    VINNo = "2BCHV8110HB571011",
+                    Mileage = 467,
+                    TransmissionType = TransmissionTypes.Automatic,
+                    NoPreviousOwner = 3,
+                    AccelerationTo60 = 6,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 139
+
+                },
+                new Car
+                {
+                    CarID = 2,
+                    CarSpecID = 2,
+                    Colour ="Grey",
+                    NumberPlate = "VO13 LUW",
+                    VINNo = "LM4AC11C331171079",
+                    Mileage = 40648,
+                    TransmissionType = TransmissionTypes.Manual,
+                    NoPreviousOwner = 1,
+                    AccelerationTo60 = 5,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 178
+
+                },
+                new Car
+                {
+                    CarID = 3,
+                    CarSpecID = 3,
+                    Colour ="Metallic Silver",
+                    NumberPlate = "YH14 DDK",
+                    VINNo = "5VCACRKF6BH210126",
+                    Mileage = 29180,
+                    TransmissionType = TransmissionTypes.Manual,
+                    NoPreviousOwner = 5,
+                    AccelerationTo60 = 9,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 103
+
+                },
+                new Car
+                {
+                    CarID = 4,
+                    CarSpecID = 4,
+                    Colour ="Graphite",
+                    NumberPlate = "YJ67 YTA",
+                    VINNo = "1P3BB26P0JW194241",
+                    Mileage = 4927,
+                    TransmissionType = TransmissionTypes.Automatic,
+                    NoPreviousOwner = 2,
+                    AccelerationTo60 = 6,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 170
+
+                },
+                new Car
+                {
+                    CarID = 5,
+                    CarSpecID = 5,
+                    Colour ="Metallic Grey",
+                    NumberPlate = "YA18 OPP",
+                    VINNo = "JM1BK34F391147858",
+                    Mileage = 259,
+                    TransmissionType = TransmissionTypes.Automatic,
+                    NoPreviousOwner = 1,
+                    AccelerationTo60 = 4,
+                    Sold = false,
+                    Delivered = false,
+                    CO2Emissions = 49
+
+                }
 
             };
 
@@ -442,8 +584,8 @@ namespace NomadCars.Migrations
                     Width = 2017,
                     Seats = 5,
                     BHP = 181,
-                    BootCapacity = 23,
-                    MPG = 40
+                    BootCapacity = 445,
+                    MPG = 47
                 },
                 new CarSpec
                 {
@@ -453,7 +595,7 @@ namespace NomadCars.Migrations
                     Petrol = false,
                     Diesel = true,
                     Electric = false,
-                    TaxGroup = TaxGroups.E,
+                    TaxGroup = TaxGroups.H,
                     BodyType = BodyTypes.Coupe,
                     DriveTrain = DriveTrains.Rear_Wheel_Drive,
                     TopSpeed = 160,
@@ -464,8 +606,8 @@ namespace NomadCars.Migrations
                     Width = 2031,
                     Seats = 5,
                     BHP = 254,
-                    BootCapacity = 10,
-                    MPG = 20
+                    BootCapacity = 495,
+                    MPG = 40
                 },
                 new CarSpec
                 {
@@ -475,19 +617,63 @@ namespace NomadCars.Migrations
                     Petrol = false,
                     Diesel = true,
                     Electric = false,
-                    TaxGroup = TaxGroups.E,
+                    TaxGroup = TaxGroups.C,
                     BodyType = BodyTypes.Coupe,
                     DriveTrain = DriveTrains.Rear_Wheel_Drive,
                     TopSpeed = 140,
                     Doors = 4,
-                    Range = 320,
+                    Range = 310,
                     EngineSize = EngineSizes.CC_1499,
                     Length = 4324,
                     Width = 1765,
                     Seats = 5,
                     BHP = 116,
-                    BootCapacity = 12,
-                    MPG = 66
+                    BootCapacity = 360,
+                    MPG = 52
+                },
+                new CarSpec
+                {
+                    CarSpecID  = 4,
+                    Make = CarMakes.BMW,
+                    Model = CarModels.BMW_X1,
+                    Petrol = false,
+                    Diesel = true,
+                    Electric = false,
+                    TaxGroup = TaxGroups.F,
+                    BodyType = BodyTypes.SUV,
+                    DriveTrain = DriveTrains.All_Wheel_Drive,
+                    TopSpeed = 160,
+                    Doors = 4,
+                    Range = 350,
+                    EngineSize = EngineSizes.CC_1999,
+                    Length = 4439,
+                    Width = 1821,
+                    Seats = 5,
+                    BHP = 150,
+                    BootCapacity = 505,
+                    MPG = 60
+                },
+                new CarSpec
+                {
+                    CarSpecID  = 5,
+                    Make = CarMakes.BMW,
+                    Model = CarModels.BMW_i8,
+                    Petrol = true,
+                    Diesel = false,
+                    Electric = true,
+                    TaxGroup = TaxGroups.B,
+                    BodyType = BodyTypes.Coupe,
+                    DriveTrain = DriveTrains.All_Wheel_Drive,
+                    TopSpeed = 160,
+                    Doors = 2,
+                    Range = 300,
+                    EngineSize = EngineSizes.CC_1499,
+                    Length = 4689,
+                    Width = 1942,
+                    Seats = 2,
+                    BHP = 370,
+                    BootCapacity = 154,
+                    MPG = 30
                 }
             };
 

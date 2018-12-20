@@ -35,8 +35,7 @@ namespace NomadCars.Models
         public string NameOnCard { get; set; }
 
         //The 3 digit number on the customer's card
-        [StringLength(3), Required, RegularExpression("[999]",
-            ErrorMessage ="Please enter 3 digits!")]
+        [StringLength(3), Required]
        public string SecurityNumber { get; set; }
         
         //The month in which the card expires
