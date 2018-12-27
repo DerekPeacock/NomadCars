@@ -61,7 +61,8 @@ namespace NomadCars.Models
         /// <summary>
         /// The date of birth of the person
         /// </summary>
-        [Required, DataType(DataType.DateTime), Display(Name = "Date of Birth")]
+        [Required, DataType(DataType.DateTime), Display(Name = "Date of Birth")] 
+        [DisplayFormat(DataFormatString ="{0:d}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
 
         /// <summary>
