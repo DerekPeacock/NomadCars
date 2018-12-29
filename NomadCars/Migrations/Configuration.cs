@@ -212,7 +212,143 @@ namespace NomadCars.Migrations
                     CarID = 1,
                     PersonID = 1,
                     StaffID = 1
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 2,
+                    InvoiceNumber =  "Invoice No 1002",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.Card,
+                    CarID = 4,
+                    PersonID = 2,
+                    StaffID = 2
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 3,
+                    InvoiceNumber =  "Invoice No 1003",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.Loan,
+                    CarID = 2,
+                    PersonID = 3,
+                    StaffID = 3
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 4,
+                    InvoiceNumber =  "Invoice No 1004",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.HP,
+                    CarID = 5,
+                    PersonID = 4,
+                    StaffID = 4
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 5,
+                    InvoiceNumber =  "Invoice No 1005",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.Card,
+                    CarID = 3,
+                    PersonID = 5,
+                    StaffID = "N/A"
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 6,
+                    InvoiceNumber =  "Invoice No 1006",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.Cash,
+                    CarID = 1,
+                    PersonID = 6,
+                    StaffID = "N/A"
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 7,
+                    InvoiceNumber =  "Invoice No 1007",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.Card,
+                    CarID = 1,
+                    PersonID = 7,
+                    StaffID = "N/A"
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 8,
+                    InvoiceNumber =  "Invoice No 1008",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.Cash,
+                    CarID = 4,
+                    PersonID = 8,
+                    StaffID = "N/A"
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 9,
+                    InvoiceNumber =  "Invoice No 1009",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.HP,
+                    CarID = 2,
+                    PersonID = 9,
+                    StaffID = "N/A"
+                },
+
+                new Purchase
+                {
+                    PurchaseID = 10 ,
+                    InvoiceNumber =  "Invoice No 1010",
+                    IsInvoiced = true,
+                    HasRegistrationDocument = true,
+                    IsReturned = false,
+                    Refund = 0.00m,
+                    IntrestRate = 3.00m,
+                    TransactionType = TransactionTypes.Loan,
+                    CarID = 5,
+                    PersonID = 10,
+                    StaffID = "N/A"
                 }
+
             };
             PurchaseList.ForEach(p => context.Purchases.AddOrUpdate(i => i.PurchaseID, p));
            context.SaveChanges();
@@ -232,7 +368,107 @@ namespace NomadCars.Migrations
                     ExpiryMonth = 8,
                     ExpiryYear = 2021,
                     SecurityNumber = "123"
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 2,
+                    NameOnCard = "Connor Patey",
+                    CardNumber = "8655 5024 1096 2694",
+                    CardType = CardTypes.VISA_DEBIT,
+                    ExpiryMonth = 4,
+                    ExpiryYear = 2023,
+                    SecurityNumber = "414"
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 3,
+                    NameOnCard = "Daniel Schafer-Smith",
+                    CardNumber = " ",
+                    CardType = CardTypes.PAYPAL,
+                    ExpiryMonth = "",
+                    ExpiryYear = "",
+                    SecurityNumber = ""
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 4,
+                    NameOnCard = "Zeeshan Akhlaq",
+                    CardNumber = "5011 6100 1897 1842",
+                    CardType = CardTypes.MASTERCARD,
+                    ExpiryMonth = "08",
+                    ExpiryYear = "2020",
+                    SecurityNumber = "871"
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 5,
+                    NameOnCard = "Tomas Green",
+                    CardNumber = "1963 4532 1829 4110",
+                    CardType = CardTypes.VISA_CREDIT,
+                    ExpiryMonth = "01",
+                    ExpiryYear = "2022",
+                    SecurityNumber = "661"
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 6,
+                    NameOnCard = "Ben Miller",
+                    CardNumber = " ",
+                    CardType = CardTypes.PAYPAL,
+                    ExpiryMonth = "",
+                    ExpiryYear = "",
+                    SecurityNumber = ""
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 7,
+                    NameOnCard = "Lilly Erikson",
+                    CardNumber = " 5001 7152 9234 0166",
+                    CardType = CardTypes.MASTERCARD,
+                    ExpiryMonth = "11",
+                    ExpiryYear = "2028",
+                    SecurityNumber = "313"
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 8,
+                    NameOnCard = "Joshua Knight",
+                    CardNumber = " ",
+                    CardType = CardTypes.PAYPAL,
+                    ExpiryMonth = "",
+                    ExpiryYear = "",
+                    SecurityNumber = ""
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 9,
+                    NameOnCard = "Emily White",
+                    CardNumber = "2168 6188 6253 1323",
+                    CardType = CardTypes.VISA_CREDIT,
+                    ExpiryMonth = "04",
+                    ExpiryYear = "2026",
+                    SecurityNumber = "701"
+                },
+
+                new PaymentCard
+                {
+                    PaymentCardID = 10,
+                    NameOnCard = "Eliot Myers",
+                    CardNumber = "7511 8012 1022 4834",
+                    CardType = CardTypes.MASTERCARD,
+                    ExpiryMonth = "01",
+                    ExpiryYear = "2022",
+                    SecurityNumber = "121"
                 }
+
             };
 
             PaymentCardList.ForEach(p => context.PaymentCards.AddOrUpdate(i => i.PaymentCardID, p));

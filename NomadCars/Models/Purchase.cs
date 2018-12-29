@@ -1,4 +1,4 @@
-using NomadCars.Models;
+ using NomadCars.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 /// <summary>
