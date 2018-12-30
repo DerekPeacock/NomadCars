@@ -271,7 +271,7 @@ namespace NomadCars.Migrations
                     TransactionType = TransactionTypes.Card,
                     CarID = 3,
                     PersonID = 5,
-                    StaffID = "N/A"
+                    StaffID = 4
                 },
 
                 new Purchase
@@ -286,7 +286,7 @@ namespace NomadCars.Migrations
                     TransactionType = TransactionTypes.Cash,
                     CarID = 1,
                     PersonID = 6,
-                    StaffID = "N/A"
+                    StaffID = 1
                 },
 
                 new Purchase
@@ -301,7 +301,7 @@ namespace NomadCars.Migrations
                     TransactionType = TransactionTypes.Card,
                     CarID = 1,
                     PersonID = 7,
-                    StaffID = "N/A"
+                    StaffID = 2
                 },
 
                 new Purchase
@@ -316,7 +316,7 @@ namespace NomadCars.Migrations
                     TransactionType = TransactionTypes.Cash,
                     CarID = 4,
                     PersonID = 8,
-                    StaffID = "N/A"
+                    StaffID = 1
                 },
 
                 new Purchase
@@ -331,7 +331,7 @@ namespace NomadCars.Migrations
                     TransactionType = TransactionTypes.HP,
                     CarID = 2,
                     PersonID = 9,
-                    StaffID = "N/A"
+                    StaffID = 2
                 },
 
                 new Purchase
@@ -346,7 +346,7 @@ namespace NomadCars.Migrations
                     TransactionType = TransactionTypes.Loan,
                     CarID = 5,
                     PersonID = 10,
-                    StaffID = "N/A"
+                    StaffID = 3
                 }
 
             };
@@ -385,11 +385,11 @@ namespace NomadCars.Migrations
                 {
                     PaymentCardID = 3,
                     NameOnCard = "Daniel Schafer-Smith",
-                    CardNumber = " ",
+                    CardNumber = "7790 3421 9546 8900",
                     CardType = CardTypes.PAYPAL,
-                    ExpiryMonth = "",
-                    ExpiryYear = "",
-                    SecurityNumber = ""
+                    ExpiryMonth = 2,
+                    ExpiryYear = 2021,
+                    SecurityNumber = "345"
                 },
 
                 new PaymentCard
@@ -398,19 +398,19 @@ namespace NomadCars.Migrations
                     NameOnCard = "Zeeshan Akhlaq",
                     CardNumber = "5011 6100 1897 1842",
                     CardType = CardTypes.MASTERCARD,
-                    ExpiryMonth = "08",
-                    ExpiryYear = "2020",
+                    ExpiryMonth = 4,
+                    ExpiryYear = 2020,
                     SecurityNumber = "871"
                 },
 
                 new PaymentCard
                 {
                     PaymentCardID = 5,
-                    NameOnCard = "Tomas Green",
+                    NameOnCard = "Thomas Green",
                     CardNumber = "1963 4532 1829 4110",
                     CardType = CardTypes.VISA_CREDIT,
-                    ExpiryMonth = "01",
-                    ExpiryYear = "2022",
+                    ExpiryMonth = 1,
+                    ExpiryYear = 2022,
                     SecurityNumber = "661"
                 },
 
@@ -418,21 +418,21 @@ namespace NomadCars.Migrations
                 {
                     PaymentCardID = 6,
                     NameOnCard = "Ben Miller",
-                    CardNumber = " ",
+                    CardNumber = "3409 2366 8866 0649",
                     CardType = CardTypes.PAYPAL,
-                    ExpiryMonth = "",
-                    ExpiryYear = "",
-                    SecurityNumber = ""
+                    ExpiryMonth = 6,
+                    ExpiryYear = 2020,
+                    SecurityNumber = "123"
                 },
 
                 new PaymentCard
                 {
                     PaymentCardID = 7,
                     NameOnCard = "Lilly Erikson",
-                    CardNumber = " 5001 7152 9234 0166",
+                    CardNumber = "5001 7152 9234 0166",
                     CardType = CardTypes.MASTERCARD,
-                    ExpiryMonth = "11",
-                    ExpiryYear = "2028",
+                    ExpiryMonth = 11,
+                    ExpiryYear = 2022,
                     SecurityNumber = "313"
                 },
 
@@ -440,11 +440,11 @@ namespace NomadCars.Migrations
                 {
                     PaymentCardID = 8,
                     NameOnCard = "Joshua Knight",
-                    CardNumber = " ",
+                    CardNumber = "8544 2334 8877 0649",
                     CardType = CardTypes.PAYPAL,
-                    ExpiryMonth = "",
-                    ExpiryYear = "",
-                    SecurityNumber = ""
+                    ExpiryMonth = 7,
+                    ExpiryYear = 2021,
+                    SecurityNumber = "976"
                 },
 
                 new PaymentCard
@@ -453,8 +453,8 @@ namespace NomadCars.Migrations
                     NameOnCard = "Emily White",
                     CardNumber = "2168 6188 6253 1323",
                     CardType = CardTypes.VISA_CREDIT,
-                    ExpiryMonth = "04",
-                    ExpiryYear = "2026",
+                    ExpiryMonth = 04,
+                    ExpiryYear = 2020,
                     SecurityNumber = "701"
                 },
 
@@ -464,8 +464,8 @@ namespace NomadCars.Migrations
                     NameOnCard = "Eliot Myers",
                     CardNumber = "7511 8012 1022 4834",
                     CardType = CardTypes.MASTERCARD,
-                    ExpiryMonth = "01",
-                    ExpiryYear = "2022",
+                    ExpiryMonth = 01,
+                    ExpiryYear = 2022,
                     SecurityNumber = "121"
                 }
 
@@ -488,6 +488,46 @@ namespace NomadCars.Migrations
                     ImageFormat = ImageFormats.jpg,
                     CarID = 2,
                     ImageURL = "~/Images/BMW330D.jpg",
+                    Position = ImagePositions.CAR_FRONT
+                },
+                                new CarImage
+                {
+                    CarImageID = 2,
+                    Caption = "BMW116D",
+                    Description = "BMW116D Description",
+                    ImageFormat = ImageFormats.jpg,
+                    CarID = 3,
+                    ImageURL = "~/Images/BMW116D",
+                    Position = ImagePositions.CAR_FRONT
+                },
+                new CarImage
+                {
+                    CarImageID = 3,
+                    Caption = "BMW4200D",
+                    Description = "BMW4200D Description",
+                    ImageFormat = ImageFormats.jpg,
+                    CarID = 1,
+                    ImageURL = "~/Images/BMW420D.jpg",
+                    Position = ImagePositions.CAR_FRONT
+                },
+                                new CarImage
+                {
+                    CarImageID = 4,
+                    Caption = "BMW18",
+                    Description = "BMW18 Description",
+                    ImageFormat = ImageFormats.jpg,
+                    CarID = 5,
+                    ImageURL = "~/Images/BMW18.jpg",
+                    Position = ImagePositions.CAR_FRONT
+                },
+                new CarImage
+                {
+                    CarImageID = 5,
+                    Caption = "BMWX1",
+                    Description = "BMWX1 Description",
+                    ImageFormat = ImageFormats.jpg,
+                    CarID = 4,
+                    ImageURL = "~/Images/BMWX1.jpg",
                     Position = ImagePositions.CAR_FRONT
                 }
 
@@ -805,7 +845,7 @@ namespace NomadCars.Migrations
                 {
                     CarSpecID  = 1,
                     Make = CarMakes.BMW,
-                    Model = CarModels.BMW_420d,
+                    Model = CarModels.BMW_420D,
                     Petrol = true,
                     Diesel = false,
                     Electric = false,
@@ -827,7 +867,7 @@ namespace NomadCars.Migrations
                 {
                     CarSpecID  = 2,
                     Make = CarMakes.BMW,
-                    Model = CarModels.BMW_330d,
+                    Model = CarModels.BMW_330D,
                     Petrol = false,
                     Diesel = true,
                     Electric = false,
@@ -849,7 +889,7 @@ namespace NomadCars.Migrations
                 {
                     CarSpecID  = 3,
                     Make = CarMakes.BMW,
-                    Model = CarModels.BMW_116d,
+                    Model = CarModels.BMW_116D,
                     Petrol = false,
                     Diesel = true,
                     Electric = false,
@@ -893,7 +933,7 @@ namespace NomadCars.Migrations
                 {
                     CarSpecID  = 5,
                     Make = CarMakes.BMW,
-                    Model = CarModels.BMW_i8,
+                    Model = CarModels.BMW_I8,
                     Petrol = true,
                     Diesel = false,
                     Electric = true,

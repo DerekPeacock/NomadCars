@@ -41,7 +41,11 @@ namespace NomadCars.Controllers
         public ActionResult Create()
         {
             ViewBag.StaffID = new SelectList(db.People, "PersonID", "FullName");
-            return View();
+
+            Staff staff = new Staff();
+            staff.StartDate = DateTime.Today;
+
+            return View(staff);
         }
 
         // POST: Staffs/Create

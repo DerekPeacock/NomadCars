@@ -40,7 +40,7 @@ namespace NomadCars.Controllers
         // GET: Cars/Create
         public ActionResult Create()
         {
-            ViewBag.CarSpecID = new SelectList(db.CarSpecs, "CarSpecID", "CarSpecID");
+            ViewBag.CarSpecID = new SelectList(db.CarSpecs, "CarSpecID", "Model");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace NomadCars.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CarSpecID = new SelectList(db.CarSpecs, "CarSpecID", "CarSpecID", car.CarSpecID);
+            ViewBag.CarSpecID = new SelectList(db.CarSpecs, "CarSpecID", "Model", car.CarSpecID);
             return View(car);
         }
 
@@ -74,7 +74,7 @@ namespace NomadCars.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CarSpecID = new SelectList(db.CarSpecs, "CarSpecID", "CarSpecID", car.CarSpecID);
+            ViewBag.CarSpecID = new SelectList(db.CarSpecs, "CarSpecID", "Model", car.CarSpecID);
             return View(car);
         }
 
@@ -91,7 +91,7 @@ namespace NomadCars.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CarSpecID = new SelectList(db.CarSpecs, "CarSpecID", "CarSpecID", car.CarSpecID);
+            ViewBag.CarSpecID = new SelectList(db.CarSpecs, "CarSpecID", "Model", car.CarSpecID);
             return View(car);
         }
 
