@@ -2,23 +2,49 @@
 <footer>
     <div class="row">
 
-        <div class="col-xs-4">
-            <p>&copy; @DateTime.Now.Year - Nomad Cars</p>
+        <div class="col-xs-8">
+            <p class="text-center">
+                &copy; @DateTime.Now.Year - Nomad Cars |
+                BNU FD Computing |
+                CO550 Web Applications |
+                CW1: ASP.NET MVC 5 Team Project
+            </p>
+            <p class="text-center">
+                <strong>Team Leader: </strong>William Foster |
+                <strong>Front End Developer: </strong>Conor Patey
+            </p>
+            <p class="text-center">
+                <strong>Back End Developer: </strong>Daniel Schaffer-Smith |
+                <strong>Domain Consultant: </strong>Zeeshan Akhlaq
+            </p>
+            <p class="text-center">
+                @Html.ActionLink("Home  |", "Index", "Home")
+                @Html.ActionLink(" Used Cars |", "UsedCars", "Home")
+                @Html.ActionLink(" Contact Us |", "Contact", "Home")
+                @Html.ActionLink(" About Us |", "About", "Home")
+                @Html.ActionLink(" Staff Portal", "Index", "Staffs")
+            </p>
+            <p class="text-center">
+                <a href="#">Cookies Policy</a> |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms &amp; Conditions</a> |
+                <a href="#">Car Insurance</a>
+            </p>
         </div>
 
         <div class="col-xs-4">
-            <ul>
-                <h4> <u>Opening Hours</u> </h4>
-                <span class="border-primary">
-                    <li>Monday - Friday : 9am - 6pm</li>
-                    <li>Saturday : 9am - 7pm</li>
-                    <li>Sunday : 10am - 4pm</li>
-                </span>
-            </ul>
-        </div>
-
-        <div class="col-xs-4">
-            <p> @Html.ActionLink("Home  |", "Index", "Home") @Html.ActionLink(" Used Cars |", " UsedCars ", "Home") @Html.ActionLink(" Contact Us |", " Contact ", "Home") </p>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Opening Hours</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="border-primary">
+                        <li>Monday - Friday : 9am - 6pm</li>
+                        <li>Saturday : 9am - 7pm</li>
+                        <li>Sunday : 10am - 4pm</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </div>

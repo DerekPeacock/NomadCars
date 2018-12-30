@@ -3,16 +3,18 @@
 @{
     ViewBag.Title = "Staff";
 }
+<header class="jumbotron">
+    <h1>Nomad Cars - Staff Team</h1>
+</header>
 
-<h2>Our Staff Team</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("Add New Staff", "Create", null, new { @class = "btn btn-info btn-large" })
 </p>
-<table class="table">
-    <tr>
+<table class="table table-bordered table-hover">
+    <tr class="bg-info">
         <th>
-            @Html.DisplayNameFor(model => model.Person.FirstName)
+            Full Name
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Department)
@@ -27,18 +29,17 @@
             @Html.DisplayNameFor(model => model.StartDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ImageURL)
+            Photo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Actions
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Person.FirstName)
+            @Html.DisplayFor(modelItem => item.Person.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Department)
@@ -53,15 +54,13 @@
             @Html.DisplayFor(modelItem => item.StartDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageURL)
+            <img src="~/Images/Staff/@item.ImageURL" 
+                 alt="Staff Photo" , title="Staff Photo" style="height:50px" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StaffID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StaffID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StaffID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.StaffID}, new { @class = "btn btn-success " })
+            @Html.ActionLink("Details", "Details", new { id = item.StaffID }, new { @class = "btn btn-info"})
+            @Html.ActionLink("Delete", "Delete", new { id = item.StaffID }, new { @class = "btn btn-danger"})
         </td>
     </tr>
 }

@@ -55,7 +55,7 @@ namespace NomadCars.Models
         /// <summary>
         /// The monthly payment of the employee.
         /// </summary>
-        [Required,DisplayFormat(DataFormatString ="{0:c}", ApplyFormatInEditMode = true)]
+        [Required,DisplayFormat(DataFormatString ="{0:c}")]
         [Display(Name ="Annual Salary")]
         public decimal Salary { get; set; }
 
@@ -65,7 +65,7 @@ namespace NomadCars.Models
         /// </summary>
         /// 
         [Required, DataType(DataType.DateTime), Display(Name = "Start Date"), 
-            DisplayFormat(DataFormatString = "{0:d}",ApplyFormatInEditMode = true)]
+            DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime StartDate { get; set; }
 
         /// <summary>

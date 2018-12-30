@@ -284,6 +284,12 @@
     <Content Include="Images\BMW420D.jpg" />
     <Content Include="Images\BMWI8.jpg" />
     <Content Include="Images\BMWX1.jpg" />
+    <Content Include="Images\NomadLogo.jpg" />
+    <Content Include="Images\NomadLogo2.jpg" />
+    <Content Include="Images\Staff\CP_Avitar.jpg" />
+    <Content Include="Images\Staff\DSS_Avitar.jpg" />
+    <Content Include="Images\Staff\WF_Avitar.jpg" />
+    <Content Include="Images\Staff\ZA_Avitar.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -366,6 +372,8 @@
     <Content Include="Views\Cars\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Cars\_CarForm.cshtml" />
+    <Content Include="Views\Cars\_ViewStart.cshtml" />
+    <Content Include="Views\CarSpecs\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
