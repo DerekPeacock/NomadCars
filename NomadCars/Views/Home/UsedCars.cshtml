@@ -1,7 +1,173 @@
-﻿@{
-    ViewBag.Title = "Used Cars";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿@using NomadCars.Models
+@model IEnumerable<NomadCars.Models.Car>
 
-<p>Use this area to provide additional information.</p>
+@{
+    ViewBag.Title = "Index";
+    int colNo = 0;
+    string path = "Images/Car0";
+    decimal price = 7800m;
+}
+
+<header class="jumbotron">
+    <h1>Nomad Cars</h1>
+    <h2>Used Cars for Sale</h2>
+    <p>
+        <select>
+            <option>All Models</option>
+            <option>BMW 116d</option>
+            <option>BMW 330d</option>
+            <option>BMW 420d</option>
+        </select>
+        <select>
+            <option>All Body Types</option>
+            <option>Coupe</option>
+            <option>Convertable</option>
+            <option>Estate</option>
+            <option>Saloon</option>
+            <option>SUV</option>
+        </select>
+        <label>Max Price</label>
+        <select>
+            <option>Any Price</option>
+            <option>£5,000</option>
+            <option>£10,000</option>
+            <option>£15,000</option>
+            <option>£20,000</option>
+        </select>
+    </p>
+</header>
+
+<main class="row">
+    
+    @foreach (var car in Model)
+    {
+
+        if (colNo > 0 && colNo % 3 == 0)
+        {
+            @:</main><main class="row">
+        }
+
+        <div class="col-lg-4">
+            <article class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="text-center">
+                        @car.CarSpec.Model.EnumDisplayNameFor()
+;                    </h4>
+                </div>
+                <div class="panel-body">
+                    @{
+                        if (car.ImagesList.Count > 0)
+                        {
+                            path = car.ImagesList.ElementAt(0).ImageURL;
+                            <a href="CarDetails">
+                                <img class="img-responsive" src="~/Images/BMW330D.jpg" alt="Image of Car" />
+                            </a>
+                            price = 8500m;
+                        }
+                        else if (car.CarSpec.Model == CarModels.BMW_116D)
+                        {
+                            <a href="CarDetails">
+                                <img src="~/Images/BMW116D.jpg" alt="Image of BMW 116d" style="width:320px" />;
+                            </a>
+                            price = 9100m;
+                        }
+                        else if (car.CarSpec.Model == CarModels.BMW_420D)
+                        {
+                            <a href="CarDetails">
+                                <img src="~/Images/BMW420D.jpg" alt="Image of BMW 420d" style="width:320px" />;
+                            </a>
+                            price = 7500m;
+                        }
+                        else if (car.CarSpec.Model == CarModels.BMW_I8)
+                        {
+                            <a href="CarDetails">
+                                <img src="~/Images/BMWI8.jpg" alt="Image of BMW i8" style="width:320px" />;
+                            </a>
+                            price = 10300m;
+                        }
+                        else if (car.CarSpec.Model == CarModels.BMW_X1)
+                        {
+                            <a href="CarDetails">
+                                <img src="~/Images/BMWX1.jpg" alt="Image of BMW X1" style="width:320px" />;
+                            </a>
+                            price = 6990m;
+                        }
+                        else
+                        {
+                            <a href="CarDetails">
+                                <img src="https://via.placeholder.com/320x220.png?text=Image+To+Come" />;
+                            </a>
+                            price = 6000m;
+                        }
+
+                    }
+                    <br />
+                    <p class="text-center">
+                        @car.TransmissionType |
+                        @car.CarSpec.BodyType |
+                        @car.Mileage.ToString("N0") Miles |
+                        <strong>£@price.ToString("N0")</strong>
+                    </p>
+
+                    @{
+                        string detailsID = "details" + car.CarID;
+                    }
+                    <p class="text-center">
+                        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#@detailsID">
+                            More Details
+                        </button>
+                    </p>
+
+                    <div class="collapse" id="@detailsID">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>
+                                    <strong>Colour</strong>
+                                </td>
+                                <td>
+                                    @car.Colour
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Fuel Type</strong>
+                                </td>
+                                <td>
+                                    @if (car.CarSpec.Petrol)
+                                    {
+                                        <span>Petrol</span>
+                                    }
+                                    else if (car.CarSpec.Diesel)
+                                    {
+                                        <span>Diesel</span>
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Registration N</strong>o
+                                </td>
+                                <td>
+                                    @car.NumberPlate
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Owners</strong>
+                                </td>
+                                <td>
+                                    @car.NoPreviousOwner
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        colNo++;
+    }
+
+</main>
+

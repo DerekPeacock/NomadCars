@@ -43,10 +43,10 @@ namespace NomadCars.Migrations
             SeedAccessory(context);
 
             // Daniel
-            //SeedImages(context);
+            SeedImages(context);
             
             // Connor
-            //SeedPurchases(context);
+            SeedPurchases(context);
         }
 
         // William
@@ -483,52 +483,62 @@ namespace NomadCars.Migrations
                 new CarImage
                 {
                     CarImageID = 1,
-                    Caption = "BMW330D",
+                    Caption = "BMW330D Front-Side",
                     Description = "BMW330D Description",
                     ImageFormat = ImageFormats.jpg,
                     CarID = 2,
-                    ImageURL = "~/Images/BMW330D.jpg",
+                    ImageURL = "~/Images/Car02/DriverSide.jpg",
                     Position = ImagePositions.CAR_FRONT
                 },
                                 new CarImage
                 {
                     CarImageID = 2,
-                    Caption = "BMW116D",
-                    Description = "BMW116D Description",
+                    Caption = "BMW330D Back",
+                    Description = "BMW330 Description",
                     ImageFormat = ImageFormats.jpg,
-                    CarID = 3,
-                    ImageURL = "~/Images/BMW116D",
-                    Position = ImagePositions.CAR_FRONT
+                    CarID = 2,
+                    ImageURL = "~/Images/Car02/Back.jpg",
+                    Position = ImagePositions.CAR_BACK
                 },
                 new CarImage
                 {
                     CarImageID = 3,
-                    Caption = "BMW4200D",
-                    Description = "BMW4200D Description",
+                    Caption = "BMW330D Side",
+                    Description = "BMW330D Description",
                     ImageFormat = ImageFormats.jpg,
-                    CarID = 1,
-                    ImageURL = "~/Images/BMW420D.jpg",
-                    Position = ImagePositions.CAR_FRONT
+                    CarID = 2,
+                    ImageURL = "~/Images/Car02/DriverSide2.jpg",
+                    Position = ImagePositions.CAR_SIDE
                 },
                                 new CarImage
                 {
                     CarImageID = 4,
-                    Caption = "BMW18",
-                    Description = "BMW18 Description",
+                    Caption = "BMW330D Interior Front",
+                    Description = "BMW330D Description",
                     ImageFormat = ImageFormats.jpg,
-                    CarID = 5,
-                    ImageURL = "~/Images/BMW18.jpg",
-                    Position = ImagePositions.CAR_FRONT
+                    CarID = 2,
+                    ImageURL = "~/Images/Car02/InteriorFront.jpg",
+                    Position = ImagePositions.CAR_INTERIOR
                 },
                 new CarImage
                 {
                     CarImageID = 5,
-                    Caption = "BMWX1",
-                    Description = "BMWX1 Description",
+                    Caption = "BMW330D Seats",
+                    Description = "BM330D Description",
                     ImageFormat = ImageFormats.jpg,
-                    CarID = 4,
-                    ImageURL = "~/Images/BMWX1.jpg",
-                    Position = ImagePositions.CAR_FRONT
+                    CarID = 2,
+                    ImageURL = "~/Images/Car02/InteriorSeats.jpg",
+                    Position = ImagePositions.CAR_INTERIOR
+                },
+                new CarImage
+                {
+                    CarImageID = 6,
+                    Caption = "BMW330D Interior Back",
+                    Description = "BM330D Description",
+                    ImageFormat = ImageFormats.jpg,
+                    CarID = 2,
+                    ImageURL = "~/Images/Car02/InteriorBack.jpg",
+                    Position = ImagePositions.CAR_INTERIOR
                 }
 
             };

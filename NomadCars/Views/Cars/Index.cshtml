@@ -3,14 +3,16 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<header class="jumbotron">
+    <h1>Nomad Cars Staff Portal</h1>
+    <h2>Listing of All Cars for Sale</h2>
+</header>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add Car", "Create", null, new {@class = "btn btn-success" })
 </p>
-<table class="table">
-    <tr>
+<table class="table table-bordered table-hover">
+    <tr class="bg-info">
         <th>
             Car
         </th>
@@ -62,9 +64,9 @@
             @Html.DisplayFor(modelItem => item.Delivered)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CarID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CarID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CarID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CarID }, new { @class = "btn btn-success " })
+            @Html.ActionLink("Details", "Details", new { id=item.CarID }, new { @class = "btn btn-info " })
+            @Html.ActionLink("Delete", "Delete", new { id=item.CarID }, new { @class = "btn btn-danger " })
         </td>
     </tr>
 }

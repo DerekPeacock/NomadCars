@@ -219,6 +219,7 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\CarSpec.cs" />
+    <Compile Include="Models\Extensions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\CarImage.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -284,6 +285,18 @@
     <Content Include="Images\BMW420D.jpg" />
     <Content Include="Images\BMWI8.jpg" />
     <Content Include="Images\BMWX1.jpg" />
+    <Content Include="Images\Car01\Back.jpg" />
+    <Content Include="Images\Car01\DriverSide.jpg" />
+    <Content Include="Images\Car01\DriverSide2.jpg" />
+    <Content Include="Images\Car01\InteriorBack.jpg" />
+    <Content Include="Images\Car01\InteriorFront.jpg" />
+    <Content Include="Images\Car01\InteriorSeats.jpg" />
+    <Content Include="Images\Car02\Back.jpg" />
+    <Content Include="Images\Car02\DriverSide.jpg" />
+    <Content Include="Images\Car02\DriverSide2.jpg" />
+    <Content Include="Images\Car02\InteriorBack.jpg" />
+    <Content Include="Images\Car02\InteriorFront.jpg" />
+    <Content Include="Images\Car02\InteriorSeats.jpg" />
     <Content Include="Images\NomadLogo.jpg" />
     <Content Include="Images\NomadLogo2.jpg" />
     <Content Include="Images\Staff\CP_Avitar.jpg" />
@@ -374,6 +387,9 @@
     <Content Include="Views\Cars\_CarForm.cshtml" />
     <Content Include="Views\Cars\_ViewStart.cshtml" />
     <Content Include="Views\CarSpecs\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Finance.cshtml" />
+    <Content Include="Views\Home\UsedCars.cshtml" />
+    <Content Include="Views\Home\CarDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
