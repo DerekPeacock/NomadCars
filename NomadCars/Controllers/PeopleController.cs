@@ -126,6 +126,16 @@ namespace NomadCars.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
+        public ActionResult ViewAccount()
+        {
+            Person customer = new Person();
+            customer.IsCustomer = true;
+            customer.IsStaff = false;
+
+            return View(customer);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

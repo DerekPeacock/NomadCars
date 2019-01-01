@@ -18,6 +18,7 @@
             <option>BMW 330d</option>
             <option>BMW 420d</option>
         </select>
+        &nbsp;&nbsp;
         <select>
             <option>All Body Types</option>
             <option>Coupe</option>
@@ -26,6 +27,7 @@
             <option>Saloon</option>
             <option>SUV</option>
         </select>
+        &nbsp;&nbsp;
         <label>Max Price</label>
         <select>
             <option>Any Price</option>
@@ -51,8 +53,10 @@
             <article class="panel panel-info">
                 <div class="panel-heading">
                     <h4 class="text-center">
-                        @car.CarSpec.Model.EnumDisplayNameFor()
-;                    </h4>
+                        <a href="CarDetails/@car.CarID">
+                            @car.CarSpec.Model.GetDisplayName()
+                        </a>
+                    </h4>
                 </div>
                 <div class="panel-body">
                     @{
@@ -116,6 +120,9 @@
                         <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#@detailsID">
                             More Details
                         </button>
+                        <a href="CarDetails/@car.CarID" class="btn btn-success">
+                            Full Details
+                        </a>
                     </p>
 
                     <div class="collapse" id="@detailsID">

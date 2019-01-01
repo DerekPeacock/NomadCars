@@ -84,9 +84,50 @@
             </a>
 
         </section>
+        <br/><br/>
+             <p class="text-center">
+                 <button class="btn btn-success">Enquire Now</button>
+                 <button class="btn btn-success">Book Test Drive</button>
+                 @Html.ActionLink("Reserve & Buy", "ViewAccount", "People", null, new { @class = "btn btn-success" })
+             </p>
+        <p class="text-center">
+            @Html.ActionLink("Back to Search", "UsedCars", null, new { @class = "btn btn-info" })
+        </p>
     </section>
 
     <section class="col-lg-6">
+        <section class="row">
+            <section class="col-sm-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Cash Price</h2>
+                    </div>
+                    <div class="panel-body lead text-success">
+                        £6,700
+                    </div>
+                </div>
+            </section>
+            <section class="col-sm-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Per Month</h2>
+                    </div>
+                    <div class="panel-body lead text-danger">
+                        £280 (PCP)
+                    </div>
+                </div>
+            </section>
+            <section class="col-sm-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Deposit</h2>
+                    </div>
+                    <div class="panel-body lead text-success">
+                        £1,700
+                    </div>
+                </div>
+            </section>
+        </section>
         <table class="table table-bordered">
             <tr>
                 <th class="bg-info">Model</th>
@@ -113,7 +154,7 @@
                 <th class="bg-info">Colour</th>
                 <td>@Model.Colour</td>
                 <th class="bg-info">Mileage</th>
-                <td>@Model.Mileage</td>
+                <td>@Model.Mileage miles</td>
             </tr>
             <tr>
                 <th class="bg-info">Registration</th>
@@ -123,7 +164,7 @@
             </tr>
             <tr>
                 <th class="bg-info">Engine Size</th>
-                <td>@Model.CarSpec.EngineSize</td>
+                <td>@Model.CarSpec.EngineSize.GetDisplayName()</td>
                 <th class="bg-info">CO2 Emissions</th>
                 <td>@Model.CO2Emissions gm/Km</td>
             </tr>
@@ -131,7 +172,7 @@
                 <th class="bg-info">MPH</th>
                 <td>@Model.CarSpec.MPG</td>
                 <th class="bg-info">0 to 60 mph</th>
-                <td>@Model.AccelerationTo60</td>
+                <td>@Model.AccelerationTo60 seconds</td>
             </tr>
             <tr>
                 <th class="bg-info">Owners</th>

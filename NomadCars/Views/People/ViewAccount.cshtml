@@ -1,0 +1,127 @@
+﻿@model NomadCars.Models.Person
+
+@{
+    /**/
+
+    ViewBag.Title = "ViewAccount";
+}
+<header class="jumbotron">
+    <h1>Nomad Cars</h1>
+    <h2>View Account: @Model.FullName</h2>
+</header>
+
+@if (Model.FirstName.IsEmpty())
+{
+    <p>
+        @Html.ActionLink("Add New Account", "Create", null, new { @class = "btn btn-primary btn-large" })
+    </p>
+}
+else
+{
+    <section>
+        <h4>Personal Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Address.House)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address.House)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentCard.CardNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PaymentCard.CardNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Staff.ImageURL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Staff.ImageURL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HomePhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HomePhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MobilePhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MobilePhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateOfBirth)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaritalStatus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaritalStatus)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsCustomer)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsCustomer)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsStaff)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsStaff)
+            </dd>
+
+        </dl>
+    </section>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PersonID }) |
+    </p>
+}
+
