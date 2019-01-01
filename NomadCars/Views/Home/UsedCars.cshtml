@@ -9,8 +9,8 @@
 }
 
 <header class="jumbotron">
-    <h1>Nomad Cars</h1>
-    <h2>Used Cars for Sale</h2>
+    <h1>Nomad Cars for Sale</h1>
+    <br/>
     <p>
         <select>
             <option>All Models</option>
@@ -38,7 +38,7 @@
 </header>
 
 <main class="row">
-    
+
     @foreach (var car in Model)
     {
 
@@ -59,42 +59,42 @@
                         if (car.ImagesList.Count > 0)
                         {
                             path = car.ImagesList.ElementAt(0).ImageURL;
-                            <a href="CarDetails">
+                            <a href="CarDetails/@car.CarID">
                                 <img class="img-responsive" src="~/Images/BMW330D.jpg" alt="Image of Car" />
                             </a>
                             price = 8500m;
                         }
                         else if (car.CarSpec.Model == CarModels.BMW_116D)
                         {
-                            <a href="CarDetails">
+                            <a href="CarDetails/@car.CarID">
                                 <img src="~/Images/BMW116D.jpg" alt="Image of BMW 116d" style="width:320px" />;
                             </a>
                             price = 9100m;
                         }
                         else if (car.CarSpec.Model == CarModels.BMW_420D)
                         {
-                            <a href="CarDetails">
+                            <a href="CarDetails/@car.CarID">
                                 <img src="~/Images/BMW420D.jpg" alt="Image of BMW 420d" style="width:320px" />;
                             </a>
                             price = 7500m;
                         }
                         else if (car.CarSpec.Model == CarModels.BMW_I8)
                         {
-                            <a href="CarDetails">
+                            <a href="CarDetails/@car.CarID">
                                 <img src="~/Images/BMWI8.jpg" alt="Image of BMW i8" style="width:320px" />;
                             </a>
                             price = 10300m;
                         }
                         else if (car.CarSpec.Model == CarModels.BMW_X1)
                         {
-                            <a href="CarDetails">
+                            <a href="CarDetails/@car.CarID">
                                 <img src="~/Images/BMWX1.jpg" alt="Image of BMW X1" style="width:320px" />;
                             </a>
                             price = 6990m;
                         }
                         else
                         {
-                            <a href="CarDetails">
+                            <a href="CarDetails/@car.CarID">
                                 <img src="https://via.placeholder.com/320x220.png?text=Image+To+Come" />;
                             </a>
                             price = 6000m;

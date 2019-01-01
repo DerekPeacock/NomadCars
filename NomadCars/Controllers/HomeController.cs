@@ -1,5 +1,7 @@
 ﻿using NomadCars.DAL;
+using NomadCars.Models;
 using System.Data.Entity;
+using System.Net;
 using System.Web.Mvc;
 
 namespace NomadCars.Controllers
@@ -34,12 +36,21 @@ namespace NomadCars.Controllers
             return View(cars);
         }
 
-        public ActionResult CarDetails()
+        public ActionResult CarDetails(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Car car = db.Cars.Find(id);
+            if (car == null)
+            {
+                return HttpNotFound();
+            }
+            
             ViewBag.Message = "Your Car Details page.";
-            var cars = db.Cars.Include(c => c.CarSpec).Include(i => i.ImagesList);
-
-            return View(cars);
+ 
+            return View(car);
         }
 
 
