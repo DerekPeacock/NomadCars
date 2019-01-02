@@ -1,106 +1,233 @@
 ﻿@model NomadCars.Models.Person
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Personal Details";
 }
+<header class="jumbotron">
+    <h1>Nomad Cars</h1>
+    <h2>Personal Account Details</h2>
+</header>
 
-<h2>Details</h2>
 
-<div>
-    <h4>Person</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Address.House)
-        </dt>
+<div class="row">
+    <section class="col-sm-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3>Personal Details</h3>
+            </div>
+            <div class="panel-body lead">
+                <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.Address.House)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Staff.Department)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FirstName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Staff.Department)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.LastName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.HomePhoneNumber)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.HomePhoneNumber)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MobilePhoneNumber)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HomePhoneNumber)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.MobilePhoneNumber)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HomePhoneNumber)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MobilePhoneNumber)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MobilePhoneNumber)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DateOfBirth)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DateOfBirth)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MaritalStatus)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.MaritalStatus)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateOfBirth)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IsCustomer)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MaritalStatus)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.IsCustomer)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MaritalStatus)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IsStaff)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsCustomer)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.IsStaff)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsCustomer)
-        </dd>
+                </dl>
+                <p class="text-right">
+                    @Html.ActionLink("Edit Personal Details", "Edit", new { id = Model.PersonID }, new { @class = "btn btn-success" })
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="col-sm-6">
+        @if(Model.IsStaff)
+        {
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Staff Details</h3>
+                </div>
+                <div class="panel-body lead">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Staff.Department)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsStaff)
-        </dt>
+                        <dd>
+                            @Model.Staff.Department
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsStaff)
-        </dd>
+                       <dt>
+                            @Html.DisplayNameFor(model => model.Staff.JobPosition)
+                        </dt>
 
-    </dl>
+                        <dd>
+                            @Html.DisplayFor(model => model.Staff.JobPosition)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Staff.Salary)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Staff.Salary)
+                        </dd>
+
+                        <dt>
+                            Start Date
+                        </dt>
+
+                        <dd>
+                            @if (Model.Staff.StartDate == null)
+                            {
+                                <span>Not Known???</span>
+                            }
+                            else
+                            {
+                                Html.DisplayFor(model => model.Staff.StartDate);
+                            }
+                        </dd>
+
+                        <dt>
+                            Photo
+                        </dt>
+
+                        <dd>
+                            <img src="~/Images/@Model.Staff.ImageURL" alt=Staff Photo />
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Staff.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Staff.Description)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        }
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3>Address Details</h3>
+            </div>
+            <div class="panel-body lead">
+                @if (Model.Address.Postcode.IsEmpty())
+                {
+                    <p>
+                        Please add the details of where you are currently living
+                    </p>
+                    <p class="text-right">
+                        @Html.ActionLink("Add Your Address", "Edit", new { id = Model.PersonID }, new { @class = "btn btn-success" })
+                    </p>
+                }
+                else
+                {
+                    <dl class="dl-horizontal">
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Address.House)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Address.House)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Address.StreetName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Address.StreetName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Address.TownName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Address.TownName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Address.Postcode)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Address.Postcode)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Address.County)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Address.County)
+                        </dd>
+                    </dl>
+                    <p class="text-right">
+                        @Html.ActionLink("Edit Your Address", "Edit", new { id = Model.PersonID }, new { @class = "btn btn-success" })
+                    </p>
+                }
+            </div>
+        </div>
+    </section>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

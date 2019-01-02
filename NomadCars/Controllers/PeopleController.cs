@@ -26,7 +26,12 @@ namespace NomadCars.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.People.Find(id);
+            Person person = db.People
+                .Where(a => a.PersonID == id)
+                .Include(b => b.Address)
+                .Include(p => p.Staff)
+                .FirstOrDefault();
+
             if (person == null)
             {
                 return HttpNotFound();
@@ -39,7 +44,11 @@ namespace NomadCars.Controllers
         {
             ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House");
             ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department");
-            return View();
+
+            Person customer = new Person();
+            customer.DateOfBirth = new System.DateTime(1980, 1, 1);
+           
+            return View(customer);
         }
 
         // POST: People/Create
@@ -129,9 +138,20 @@ namespace NomadCars.Controllers
         [Authorize]
         public ActionResult ViewAccount()
         {
-            Person customer = new Person();
-            customer.IsCustomer = true;
-            customer.IsStaff = false;
+            string email = User.Identity.Name;
+
+            Person customer = db.People.Where(p => p.Email == email).FirstOrDefault();
+
+            if(customer == null)
+            {
+                customer = new Person();
+
+                customer.IsCustomer = true;
+                customer.IsStaff = false;
+                customer.Email = email;
+
+                return RedirectToAction("Create");
+            }
 
             return View(customer);
         }
