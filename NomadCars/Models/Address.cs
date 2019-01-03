@@ -37,7 +37,7 @@ namespace NomadCars.Models
         /// <summary>
         /// This is either the name or number of the house a person lives in.
         /// </summary>
-        [Required, StringLength(30), Display(Name ="House Name/Number")]
+        [Required, StringLength(30), Display(Name ="House")]
         public string House { get; set; }
         
         /// <summary>

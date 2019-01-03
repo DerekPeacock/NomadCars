@@ -4,7 +4,10 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<header class="jumbotron">
+    <h1>Nomad Cars</h1>
+    <h2>Add an Address for @Model.Person.FullName</h2>
+</header>
 
 
 @using (Html.BeginForm()) 
@@ -15,13 +18,15 @@
         <h4>Address</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        @Html.HiddenFor(model => model.AddressID);
+
+        @*<div class="form-group">
             @Html.LabelFor(model => model.AddressID, "AddressID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("AddressID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.AddressID, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.House, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -73,10 +78,6 @@
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

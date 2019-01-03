@@ -5,7 +5,7 @@
 }
 <header class="jumbotron">
     <h1>Nomad Cars</h1>
-    <h2>Personal Account Details</h2>
+    <h2>@Model.FullName Personal Account Details</h2>
 </header>
 
 
@@ -96,87 +96,22 @@
                 </p>
             </div>
         </div>
+ 
     </section>
     <section class="col-sm-6">
-        @if(Model.IsStaff)
-        {
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3>Staff Details</h3>
-                </div>
-                <div class="panel-body lead">
-                    <dl class="dl-horizontal">
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Staff.Department)
-                        </dt>
-
-                        <dd>
-                            @Model.Staff.Department
-                        </dd>
-
-                       <dt>
-                            @Html.DisplayNameFor(model => model.Staff.JobPosition)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Staff.JobPosition)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Staff.Salary)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Staff.Salary)
-                        </dd>
-
-                        <dt>
-                            Start Date
-                        </dt>
-
-                        <dd>
-                            @if (Model.Staff.StartDate == null)
-                            {
-                                <span>Not Known???</span>
-                            }
-                            else
-                            {
-                                Html.DisplayFor(model => model.Staff.StartDate);
-                            }
-                        </dd>
-
-                        <dt>
-                            Photo
-                        </dt>
-
-                        <dd>
-                            <img src="~/Images/@Model.Staff.ImageURL" alt=Staff Photo />
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Staff.Description)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.Staff.Description)
-                        </dd>
-
-                    </dl>
-                </div>
-            </div>
-        }
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3>Address Details</h3>
             </div>
             <div class="panel-body lead">
-                @if (Model.Address.Postcode.IsEmpty())
+                @if (Model.Address == null)
                 {
                     <p>
                         Please add the details of where you are currently living
                     </p>
+                    <br/>
                     <p class="text-right">
-                        @Html.ActionLink("Add Your Address", "Edit", new { id = Model.PersonID }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Add Your Address", "Create", "Addresses", new { id = Model.PersonID }, new { @class = "btn btn-success" })
                     </p>
                 }
                 else
@@ -229,5 +164,145 @@
                 }
             </div>
         </div>
+    </section>
+</div>
+<div class="row">
+    <section class="col-lg-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3>Payment Card Details</h3>
+            </div>
+            <div class="panel-body lead">
+                @if (Model.PaymentCard == null)
+                {
+                    <p>
+                        Please add the details of your Payment Card
+                    </p>
+                    <br/>
+                    <p class="text-right">
+                        @Html.ActionLink("Add Payment Card", "Create", "PaymentCards", new { id = Model.PersonID }, new { @class = "btn btn-success" })
+                    </p>
+                }
+                else
+                {
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PaymentCard.CardType)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PaymentCard.CardType)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PaymentCard.CardNumber)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PaymentCard.CardNumber)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PaymentCard.NameOnCard)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PaymentCard.NameOnCard)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PaymentCard.SecurityNumber)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PaymentCard.SecurityNumber)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PaymentCard.ExpiryMonth)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PaymentCard.ExpiryMonth)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PaymentCard.ExpiryYear)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.PaymentCard.ExpiryYear)
+                        </dd>
+
+                    </dl>
+                    <br/>
+                    <p class="text-right">
+                        @Html.ActionLink("Edit Payment Card Details", "Edit", new { id = Model.PaymentCard.PaymentCardID }, new { @class = "btn btn-success" })
+                    </p>
+                }
+
+            </div>
+        </div>
+    </section>
+    <section class="col-lg-6">
+        @if (Model.IsStaff)
+        {
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Staff Details</h3>
+                </div>
+                <div class="panel-body lead">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Photo
+                        </dt>
+
+                        <dd>
+                            <img src="~/Images/@Model.Staff.ImageURL" alt=Staff Photo />
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Staff.Department)
+                        </dt>
+
+                        <dd>
+                            @Model.Staff.Department
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Staff.JobPosition)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Staff.JobPosition)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Staff.Salary)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Staff.Salary)
+                        </dd>
+
+                        <dt>
+                            Start Date
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Staff.StartDate)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Staff.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Staff.Description)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        }
     </section>
 </div>

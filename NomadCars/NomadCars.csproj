@@ -179,6 +179,7 @@
     <Compile Include="Controllers\CarSpecsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaymentCardsController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\StaffsController.cs" />
     <Compile Include="DAL\NomadDbContext.cs" />
@@ -392,6 +393,12 @@
     <Content Include="Views\Home\UsedCars.cshtml" />
     <Content Include="Views\Home\CarDetails.cshtml" />
     <Content Include="Views\People\ViewAccount.cshtml" />
+    <Content Include="Views\PaymentCards\Create.cshtml" />
+    <Content Include="Views\PaymentCards\Delete.cshtml" />
+    <Content Include="Views\PaymentCards\Details.cshtml" />
+    <Content Include="Views\PaymentCards\Edit.cshtml" />
+    <Content Include="Views\PaymentCards\Index.cshtml" />
+    <Content Include="Views\People\_PersonForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

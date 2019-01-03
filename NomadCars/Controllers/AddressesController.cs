@@ -38,10 +38,22 @@ namespace NomadCars.Controllers
         }
 
         // GET: Addresses/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            ViewBag.AddressID = new SelectList(db.People, "PersonID", "FullName");
-            return View();
+            //ViewBag.AddressID = new SelectList(db.People, "PersonID", "FullName");
+
+            Person person = db.People.Find(id);
+
+            if (person == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Address address = new Address();
+            address.AddressID = id;
+            address.Person = person;
+
+            return View(address);
         }
 
         // POST: Addresses/Create
@@ -55,7 +67,7 @@ namespace NomadCars.Controllers
             {
                 db.Addresses.Add(address);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "People", new { id = address.AddressID});
             }
 
             ViewBag.AddressID = new SelectList(db.People, "PersonID", "FirstName", address.AddressID);
@@ -119,6 +131,15 @@ namespace NomadCars.Controllers
             db.Addresses.Remove(address);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public Person GetLoggedInUser()
+        {
+            string email = User.Identity.Name;
+
+            Person person = db.People.Where(p => p.Email == email).FirstOrDefault();
+
+            return person;
         }
 
         protected override void Dispose(bool disposing)

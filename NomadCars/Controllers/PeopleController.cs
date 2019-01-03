@@ -42,11 +42,17 @@ namespace NomadCars.Controllers
         // GET: People/Create
         public ActionResult Create()
         {
-            ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House");
-            ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department");
+            //ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House");
+            //ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department");
+
+            string email = User.Identity.Name;
 
             Person customer = new Person();
+
+            customer.Email = email;
             customer.DateOfBirth = new System.DateTime(1980, 1, 1);
+            customer.IsCustomer = true;
+            customer.IsStaff = false;
            
             return View(customer);
         }
@@ -62,11 +68,12 @@ namespace NomadCars.Controllers
             {
                 db.People.Add(person);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new {id = person.PersonID });
             }
 
-            ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House", person.PersonID);
-            ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department", person.PersonID);
+            //ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House", person.PersonID);
+            //ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department", person.PersonID);
+
             return View(person);
         }
 
@@ -83,8 +90,8 @@ namespace NomadCars.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House", person.PersonID);
-            ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department", person.PersonID);
+            //ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House", person.PersonID);
+            //ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department", person.PersonID);
 
             return View(person);
         }
@@ -100,11 +107,11 @@ namespace NomadCars.Controllers
             {
                 db.Entry(person).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = person.PersonID});
             }
 
-            ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House", person.PersonID);
-            ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department", person.PersonID);
+            //ViewBag.PersonID = new SelectList(db.Addresses, "AddressID", "House", person.PersonID);
+            //ViewBag.PersonID = new SelectList(db.Staff, "StaffID", "Department", person.PersonID);
 
             return View(person);
         }
@@ -152,8 +159,17 @@ namespace NomadCars.Controllers
 
                 return RedirectToAction("Create");
             }
-
+            
             return View(customer);
+        }
+
+        public Person GetLoggedInUser()
+        {
+            string email = User.Identity.Name;
+
+            Person person = db.People.Where(p => p.Email == email).FirstOrDefault();
+
+            return person;
         }
 
         protected override void Dispose(bool disposing)
