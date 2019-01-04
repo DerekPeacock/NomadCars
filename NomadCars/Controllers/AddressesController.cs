@@ -11,11 +11,13 @@ using NomadCars.Models;
 
 namespace NomadCars.Controllers
 {
+    [Authorize]
     public class AddressesController : Controller
     {
         private NomadDbContext db = new NomadDbContext();
 
         // GET: Addresses
+        [Authorize(Roles ="Staff")]
         public ActionResult Index()
         {
             var addresses = db.Addresses.Include(a => a.Person);

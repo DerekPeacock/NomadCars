@@ -11,6 +11,7 @@ using NomadCars.Models;
 
 namespace NomadCars.Controllers
 {
+    [Authorize(Roles ="Staff")]
     public class StaffsController : Controller
     {
         private NomadDbContext db = new NomadDbContext();

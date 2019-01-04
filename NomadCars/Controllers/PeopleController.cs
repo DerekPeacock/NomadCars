@@ -8,11 +8,13 @@ using NomadCars.Models;
 
 namespace NomadCars.Controllers
 {
+    [Authorize]
     public class PeopleController : Controller
     {
         private NomadDbContext db = new NomadDbContext();
 
         // GET: People
+        [Authorize(Roles ="Staff")]
         public ActionResult Index()
         {
             var people = db.People.Include(p => p.Address).Include(p => p.Staff);
@@ -22,15 +24,25 @@ namespace NomadCars.Controllers
         // GET: People/Details/5
         public ActionResult Details(int? id)
         {
+            Person person;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.People
-                .Where(a => a.PersonID == id)
-                .Include(b => b.Address)
-                .Include(p => p.Staff)
-                .FirstOrDefault();
+
+            if(User.IsInRole("Staff"))
+            {
+                person = db.People
+                    .Where(a => a.PersonID == id)
+                    .Include(b => b.Address)
+                    .Include(p => p.Staff)
+                    .FirstOrDefault();
+            }
+            else
+            {
+                person = GetLoggedInUser();
+            }
 
             if (person == null)
             {
@@ -80,11 +92,22 @@ namespace NomadCars.Controllers
         // GET: People/Edit/5
         public ActionResult Edit(int? id)
         {
+            Person person;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.People.Find(id);
+
+            if (User.IsInRole("Staff"))
+            {
+                person = db.People.Find(id);
+            }
+            else
+            {
+                person = GetLoggedInUser();
+            }
+
             if (person == null)
             {
                 return HttpNotFound();
@@ -167,7 +190,11 @@ namespace NomadCars.Controllers
         {
             string email = User.Identity.Name;
 
-            Person person = db.People.Where(p => p.Email == email).FirstOrDefault();
+            Person person = db.People
+                .Where(p => p.Email == email)
+                .Include(b => b.Address)
+                .Include(p => p.Staff)
+                .FirstOrDefault();
 
             return person;
         }

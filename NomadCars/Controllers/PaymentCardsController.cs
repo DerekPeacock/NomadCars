@@ -11,11 +11,13 @@ using NomadCars.Models;
 
 namespace NomadCars.Controllers
 {
+    [Authorize]
     public class PaymentCardsController : Controller
     {
         private NomadDbContext db = new NomadDbContext();
 
         // GET: PaymentCards
+        [Authorize(Roles ="Staff")]
         public ActionResult Index()
         {
             return View(db.PaymentCards.ToList());
