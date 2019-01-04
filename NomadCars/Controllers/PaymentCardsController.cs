@@ -26,22 +26,40 @@ namespace NomadCars.Controllers
         // GET: PaymentCards/Details/5
         public ActionResult Details(int? id)
         {
+            PaymentCard paymentCard;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PaymentCard paymentCard = db.PaymentCards.Find(id);
+
+            if(User.IsInRole("Staff"))
+            {
+                paymentCard = db.PaymentCards.Find(id);
+            }
+            else
+            {
+                Person person = GetLoggedInUser();
+                paymentCard = db.PaymentCards.Find(person.PersonID);
+            }
+
             if (paymentCard == null)
             {
                 return HttpNotFound();
             }
+
             return View(paymentCard);
         }
 
         // GET: PaymentCards/Create
         public ActionResult Create()
         {
-            return View();
+            PaymentCard card = new PaymentCard();
+
+            Person person = GetLoggedInUser();
+            card.PaymentCardID = person.PersonID;
+
+            return View(card);
         }
 
         // POST: PaymentCards/Create
@@ -55,7 +73,7 @@ namespace NomadCars.Controllers
             {
                 db.PaymentCards.Add(paymentCard);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details","People",new { id = paymentCard.PaymentCardID});
             }
 
             return View(paymentCard);
@@ -116,6 +134,19 @@ namespace NomadCars.Controllers
             db.PaymentCards.Remove(paymentCard);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public Person GetLoggedInUser()
+        {
+            string email = User.Identity.Name;
+
+            Person person = db.People
+                .Where(p => p.Email == email)
+                .Include(b => b.Address)
+                .Include(p => p.Staff)
+                .FirstOrDefault();
+
+            return person;
         }
 
         protected override void Dispose(bool disposing)

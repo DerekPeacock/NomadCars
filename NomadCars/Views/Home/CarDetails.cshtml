@@ -3,8 +3,10 @@
 
 @{
     ViewBag.Title = "Car Details";
+    ViewBag.Car = Model;
     int count = 0;
 }
+
 <header class="jumbotron">
     <h2>Details of @Model.CarSpec.Model.GetDisplayName() @Model.CarSpec.BodyType</h2>
 </header>
@@ -88,7 +90,7 @@
              <p class="text-center">
                  <button class="btn btn-success">Enquire Now</button>
                  <button class="btn btn-success">Book Test Drive</button>
-                 @Html.ActionLink("Reserve & Buy", "ViewAccount", "People", null, new { @class = "btn btn-success" })
+                 @Html.ActionLink("Reserve & Buy", "ViewAccount", "People", new { carID = Model.CarID }, new { @class = "btn btn-success" })
              </p>
         <p class="text-center">
             @Html.ActionLink("Back to Search", "UsedCars", null, new { @class = "btn btn-info" })
@@ -103,7 +105,7 @@
                         <h2 class="panel-title">Cash Price</h2>
                     </div>
                     <div class="panel-body lead text-success">
-                        £6,700
+                        @Model.Price.ToString("c0")
                     </div>
                 </div>
             </section>
@@ -113,7 +115,7 @@
                         <h2 class="panel-title">Per Month</h2>
                     </div>
                     <div class="panel-body lead text-danger">
-                        £280 (PCP)
+                        @Model.GetCostPerMonth().ToString("c0") (PCP)
                     </div>
                 </div>
             </section>
@@ -123,7 +125,7 @@
                         <h2 class="panel-title">Deposit</h2>
                     </div>
                     <div class="panel-body lead text-success">
-                        £1,700
+                        @Model.GetDeposit().ToString("c0")
                     </div>
                 </div>
             </section>

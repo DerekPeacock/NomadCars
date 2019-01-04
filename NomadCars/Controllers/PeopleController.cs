@@ -22,9 +22,16 @@ namespace NomadCars.Controllers
         }
 
         // GET: People/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, int?carid)
         {
             Person person;
+            Car car = null;
+
+            if(carid != null)
+            {
+                car = db.Cars.Find(carid);
+                ViewBag.Car = car;
+            }
 
             if (id == null)
             {
@@ -37,6 +44,7 @@ namespace NomadCars.Controllers
                     .Where(a => a.PersonID == id)
                     .Include(b => b.Address)
                     .Include(p => p.Staff)
+                    .Include(c => c.PaymentCard)
                     .FirstOrDefault();
             }
             else
@@ -166,11 +174,9 @@ namespace NomadCars.Controllers
         }
 
         [Authorize]
-        public ActionResult ViewAccount()
+        public ActionResult ViewAccount(int? carID)
         {
-            string email = User.Identity.Name;
-
-            Person customer = db.People.Where(p => p.Email == email).FirstOrDefault();
+            Person customer = GetLoggedInUser();
 
             if(customer == null)
             {
@@ -178,12 +184,16 @@ namespace NomadCars.Controllers
 
                 customer.IsCustomer = true;
                 customer.IsStaff = false;
-                customer.Email = email;
+                customer.Email = User.Identity.Name;
 
                 return RedirectToAction("Create");
             }
             
-            return View(customer);
+            if(carID == null)
+                return RedirectToAction("Details", new {id = customer.PersonID });
+            else
+                return RedirectToAction("Details", new { id = customer.PersonID, carid = carID });
+
         }
 
         public Person GetLoggedInUser()
@@ -194,6 +204,7 @@ namespace NomadCars.Controllers
                 .Where(p => p.Email == email)
                 .Include(b => b.Address)
                 .Include(p => p.Staff)
+                .Include(c => c.PaymentCard)
                 .FirstOrDefault();
 
             return person;

@@ -65,8 +65,7 @@ namespace NomadCars.Migrations
                     Email = "william.foster@nomad.com",
                     IsCustomer = false,
                     IsStaff = true,
-                    MaritalStatus = MaritalSatusOptions.SINGLE,
-                    PaymentCardID = 1
+                    MaritalStatus = MaritalSatusOptions.SINGLE
                 }, 
                 new Person
                 {
@@ -773,8 +772,8 @@ namespace NomadCars.Migrations
                     AccelerationTo60 = 6,
                     Sold = false,
                     Delivered = false,
-                    CO2Emissions = 139
-
+                    CO2Emissions = 139,
+                    Price = 8700m
                 },
                 new Car
                 {
@@ -789,8 +788,8 @@ namespace NomadCars.Migrations
                     AccelerationTo60 = 5,
                     Sold = false,
                     Delivered = false,
-                    CO2Emissions = 178
-
+                    CO2Emissions = 178,
+                    Price = 6500m
                 },
                 new Car
                 {
@@ -805,8 +804,8 @@ namespace NomadCars.Migrations
                     AccelerationTo60 = 9,
                     Sold = false,
                     Delivered = false,
-                    CO2Emissions = 103
-
+                    CO2Emissions = 103,
+                    Price = 7800m
                 },
                 new Car
                 {
@@ -821,8 +820,8 @@ namespace NomadCars.Migrations
                     AccelerationTo60 = 6,
                     Sold = false,
                     Delivered = false,
-                    CO2Emissions = 170
-
+                    CO2Emissions = 170,
+                    Price = 8990m
                 },
                 new Car
                 {
@@ -837,8 +836,8 @@ namespace NomadCars.Migrations
                     AccelerationTo60 = 4,
                     Sold = false,
                     Delivered = false,
-                    CO2Emissions = 49
-
+                    CO2Emissions = 49,
+                    Price = 9600m
                 }
 
             };

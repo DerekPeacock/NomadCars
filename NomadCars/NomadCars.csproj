@@ -214,6 +214,14 @@
     <Compile Include="Migrations\201812201527092_UpdatePurchase.Designer.cs">
       <DependentUpon>201812201527092_UpdatePurchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901041433140_AddCarPrice.cs" />
+    <Compile Include="Migrations\201901041433140_AddCarPrice.Designer.cs">
+      <DependentUpon>201901041433140_AddCarPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901041520597_RemoveCardID.cs" />
+    <Compile Include="Migrations\201901041520597_RemoveCardID.Designer.cs">
+      <DependentUpon>201901041520597_RemoveCardID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -437,6 +445,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812201527092_UpdatePurchase.resx">
       <DependentUpon>201812201527092_UpdatePurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901041433140_AddCarPrice.resx">
+      <DependentUpon>201901041433140_AddCarPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901041520597_RemoveCardID.resx">
+      <DependentUpon>201901041520597_RemoveCardID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

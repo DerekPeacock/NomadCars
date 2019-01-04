@@ -69,6 +69,7 @@ namespace NomadCars.Controllers
             {
                 db.Addresses.Add(address);
                 db.SaveChanges();
+
                 return RedirectToAction("Details", "People", new { id = address.AddressID});
             }
 
@@ -79,11 +80,23 @@ namespace NomadCars.Controllers
         // GET: Addresses/Edit/5
         public ActionResult Edit(int? id)
         {
+            Address address;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Address address = db.Addresses.Find(id);
+
+            if(User.IsInRole("Staff"))
+            {
+                address = db.Addresses.Find(id);
+            }
+            else
+            {
+                Person person = GetLoggedInUser();
+                address = db.Addresses.Find(person.PersonID);
+            }
+
             if (address == null)
             {
                 return HttpNotFound();
@@ -139,7 +152,11 @@ namespace NomadCars.Controllers
         {
             string email = User.Identity.Name;
 
-            Person person = db.People.Where(p => p.Email == email).FirstOrDefault();
+            Person person = db.People
+                .Where(p => p.Email == email)
+                .Include(b => b.Address)
+                .Include(p => p.Staff)
+                .FirstOrDefault();
 
             return person;
         }

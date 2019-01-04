@@ -77,6 +77,10 @@ namespace NomadCars.Models
         [Range(0, 1000)]
         public int CO2Emissions { get; set; }
 
+        [DataType(DataType.Currency), DisplayFormat(DataFormatString ="{0:c}")]
+        [Display(Name ="Cash Price")]
+        public decimal Price { get; set; }
+
         public virtual ICollection<Accessory> AccessoriesList { get; set; }
 
         public virtual ICollection<CarImage> ImagesList { get; set; }
@@ -88,6 +92,16 @@ namespace NomadCars.Models
         public int CarSpecID { get; set; }
 
         public virtual CarSpec CarSpec { get; set; }
+
+        public decimal GetCostPerMonth()
+        {
+            return (Price - GetDeposit()) * 1.06m / 36;
+        }
+
+        public decimal GetDeposit()
+        {
+            return Price * 0.2m;
+        }
 
     }
 

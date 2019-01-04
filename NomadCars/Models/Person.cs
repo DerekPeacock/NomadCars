@@ -90,8 +90,6 @@ namespace NomadCars.Models
 
         public Staff Staff { get; set; }
 
-        public Nullable<int> PaymentCardID { get; set; }
-
         public ICollection<Purchase> PurchaseList;
 
         public virtual PaymentCard PaymentCard { get; set; }

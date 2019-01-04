@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NomadCars.Models
 {
@@ -20,7 +21,8 @@ namespace NomadCars.Models
     /// </summary>
     public class PaymentCard
     {
-        //A specific ID used to identify each card uniquely
+        //A specific ID used to identify each card uniquely to a person
+        [ForeignKey("Person")]
         public int PaymentCardID { get; set; }
         
         //This is the type of card that the customer will be using to make their purchase
@@ -46,7 +48,7 @@ namespace NomadCars.Models
         [Range(2018,2024)]
         public int ExpiryYear { get; set; }
         
-
+        public virtual Person Person { get; set; }
 
     }
 }
